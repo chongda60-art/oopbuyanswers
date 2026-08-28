@@ -1,0 +1,3 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "Privacy", alternates: { canonical: "/privacy" } };
+export default function PrivacyPage() { return <main className="page reading"><header className="page-heading"><h1>Privacy</h1><p>This pre-launch release does not provide accounts, question submissions, or search logging.</p></header><h2>Data collection</h2><p>No analytics account is configured. Search terms entered on this site are not stored by the application. Standard hosting infrastructure may process technical request data under the host’s own policies.</p><h2>External links</h2><p>Future approved pages may link to other websites. Those sites apply their own privacy practices.</p></main>; }

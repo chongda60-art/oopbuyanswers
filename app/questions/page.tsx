@@ -1,0 +1,8 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { title: "Questions", description: "Approved and published Oopbuy research questions.", alternates: { canonical: "/questions" } };
+
+export default function QuestionsPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
+  void searchParams;
+  return <main className="page"><header className="page-heading"><h1>Questions</h1><p>Approved and published only.</p></header><form className="library-search" role="search"><label className="sr-only" htmlFor="question-search">Search Oopbuy questions</label><input id="question-search" name="q" placeholder="Search Oopbuy questions" autoComplete="off"/><label><span>Topic</span><select name="topic" disabled><option>All topics</option></select></label><label><span>Updated</span><select name="updated" disabled><option>Any time</option></select></label></form><section className="empty-state compact"><h2>No approved answers match this search.</h2><p>Search is not recorded. No submission is created.</p></section></main>;
+}
