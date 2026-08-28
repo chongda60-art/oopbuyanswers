@@ -32,13 +32,16 @@ Status: implementation, local validation, GitHub push, and Vercel production dep
 - Commits:
   - `bb1581f` - `Build Oopbuy Answers prelaunch research site`.
   - `149e00e` - `Ignore local deploy tool config`.
+  - `c9a45f3` - `Document Vercel deployment workflow`.
+  - `5e58ad1` - `Redirect www to apex`.
 - Vercel account/scope: `chen-d2eb`.
 - Vercel project: `oopbuyanswers`.
 - Vercel project id: `prj_UniyNy1KPTUU5XXDGjoXFw5EUC7s`.
-- Production deployment id: `dpl_3Gbaj2sV2rMBSMLGXtYydkKE6kth`.
-- Production inspect URL: `https://vercel.com/chen-d2eb/oopbuyanswers/3Gbaj2sV2rMBSMLGXtYydkKE6kth`.
+- GitHub connection: Vercel CLI `git connect` completed for `https://github.com/chongda60-art/oopbuyanswers`.
+- Production deployment id: `dpl_2EteUNgMtCLA87wwGtcYQT4DAsS8`.
+- Production inspect URL: `https://vercel.com/chen-d2eb/oopbuyanswers/2EteUNgMtCLA87wwGtcYQT4DAsS8`.
 - Public Vercel alias: `https://oopbuyanswers.vercel.app`.
-- Latest deployment URL: `https://oopbuyanswers-bf21djr5g-chen-d2eb.vercel.app`.
+- Latest deployment URL: `https://oopbuyanswers-401g4bckf-chen-d2eb.vercel.app`.
 - Vercel environment variables:
   - `NEXT_PUBLIC_LAUNCH_INDEXING=false`
   - `NEXT_PUBLIC_SITE_URL=https://oopbuyanswers.com`
