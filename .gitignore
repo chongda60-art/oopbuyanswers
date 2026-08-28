@@ -1,6 +1,7 @@
 node_modules/
 .next/
 out/
+.vercel/
 .env*
 !.env.example
 playwright-report/
@@ -26,3 +27,5 @@ design/oopbuy/06-final-direction-desktop-home-questions.png
 design/oopbuy/06-final-direction-desktop-home-questions-v2.png
 design/oopbuy/10-final-direction-system-states.png
 deploy-tools/config.psd1
+
+.vercel

@@ -1,6 +1,6 @@
 # Oopbuy Answers validation report
 
-Status: implementation and local validation complete; production fields will be appended after deployment.
+Status: implementation, local validation, GitHub push, and Vercel production deployment complete. Custom-domain DNS is pending Spaceship record update.
 
 ## Local build
 
@@ -28,7 +28,32 @@ Status: implementation and local validation complete; production fields will be 
 
 ## Production
 
-- Git repository: pending.
-- Commit: pending.
-- Vercel project/deployment: pending.
-- DNS/HTTPS/apex/www redirect: pending.
+- Git repository: `https://github.com/chongda60-art/oopbuyanswers`.
+- Commits:
+  - `bb1581f` - `Build Oopbuy Answers prelaunch research site`.
+  - `149e00e` - `Ignore local deploy tool config`.
+- Vercel account/scope: `chen-d2eb`.
+- Vercel project: `oopbuyanswers`.
+- Vercel project id: `prj_UniyNy1KPTUU5XXDGjoXFw5EUC7s`.
+- Production deployment id: `dpl_3Gbaj2sV2rMBSMLGXtYydkKE6kth`.
+- Production inspect URL: `https://vercel.com/chen-d2eb/oopbuyanswers/3Gbaj2sV2rMBSMLGXtYydkKE6kth`.
+- Public Vercel alias: `https://oopbuyanswers.vercel.app`.
+- Latest deployment URL: `https://oopbuyanswers-bf21djr5g-chen-d2eb.vercel.app`.
+- Vercel environment variables:
+  - `NEXT_PUBLIC_LAUNCH_INDEXING=false`
+  - `NEXT_PUBLIC_SITE_URL=https://oopbuyanswers.com`
+  - `NEXT_PUBLIC_SITE_BRAND=Oopbuy Answers`
+- Public alias checks:
+  - `/`, `/questions`, `/topics`: HTTP 200 with `meta robots=noindex, nofollow`.
+  - `/spreadsheet`, `/product/demo`: HTTP 404.
+  - no public Hold article candidate or fixture product text detected.
+- Vercel domain records returned on 2026-08-29:
+  - `@` A `216.198.79.1`
+  - `@` A `64.29.17.1`
+  - `www` CNAME `afb45460b24bbbef.vercel-dns-017.com.`
+- Current DNS observed by Vercel before Spaceship update:
+  - nameservers: `launch1.spaceship.net`, `launch2.spaceship.net`
+  - apex A: `54.149.79.189`, `34.216.117.25`
+  - www CNAME: none
+- Custom domain status: pending Spaceship DNS update and propagation.
+- HTTPS/apex/www redirect: pending DNS update.
