@@ -1,5 +1,46 @@
 # Oopbuy Answers validation report
 
+## 2026-08-30 CuriCart Bridge content-system update
+
+- Implemented `components/CuricartBridge.tsx` for Oopbuy Answers question and topic pages.
+- Bridge data source: `content/questions.json`, converted from `content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md`.
+- Render rule: only `approved/current` bridge items with non-empty `matchReason` render.
+- Product rule: max 5 `productPreview` cards per question; no product cards render until approved CuriCart product API data provides complete product name, image URL, category, Style/SKU, source type, canonical URL, UTM URL, verified date, and current status.
+- Category rule: category bridge cards link only to canonical `https://www.curicart.com/...` URLs with `utm_source=oopbuyanswers`, `utm_medium=referral`, `utm_campaign=oopbuy_questions`, and `utm_content` from the question or topic slug.
+- Homepage public section removed: `What this site will publish`, its paragraph, and `Read the source method` are no longer visible on production.
+- `/sources` remains available.
+- No local product detail pages were added; `/product/demo` remains HTTP 404.
+- noindex/nofollow, robots `Disallow: /`, and empty sitemap remain active.
+
+Validation commands passed:
+
+- `powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\validate-content.ps1`
+- `powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\build.ps1`
+- `powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\verify.ps1`
+- `powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\screenshots.ps1`
+
+Production deployment:
+
+- Deployment id: `dpl_Hq74YhF9cGAvNmZmCKHauuapesmj`
+- Inspect URL: `https://vercel.com/chen-d2eb/oopbuyanswers/Hq74YhF9cGAvNmZmCKHauuapesmj`
+- Production URL: `https://oopbuyanswers.com/`
+- Vercel deployment URL: `https://oopbuyanswers-949fs6c11-chen-d2eb.vercel.app`
+
+New screenshots:
+
+- `reports/screenshots/oopbuyanswers-production-desktop.png`
+- `reports/screenshots/oopbuyanswers-production-mobile.png`
+- `reports/screenshots/oopbuyanswers-questions-desktop.png`
+- `reports/screenshots/oopbuyanswers-questions-mobile.png`
+- `reports/screenshots/oopbuyanswers-question-bridge-desktop.png`
+- `reports/screenshots/oopbuyanswers-question-bridge-mobile.png`
+- `reports/screenshots/oopbuyanswers-topic-qc-desktop.png`
+- `reports/screenshots/oopbuyanswers-topic-qc-mobile.png`
+
+Current limitation:
+
+- Terminal GitHub push failed because direct terminal HTTPS access to `github.com:443` timed out/reset. Local commit `7abcf0a` exists and production was deployed directly from local source through Vercel CLI. Retry `git push origin HEAD` when terminal GitHub connectivity is available.
+
 Status: implementation, GitHub push, Vercel production deployment, Spaceship DNS connection, HTTPS, apex/www redirect, and noindex prelaunch validation are complete.
 
 ## Local build

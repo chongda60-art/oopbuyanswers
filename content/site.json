@@ -1,0 +1,17 @@
+{
+  "brand": "Oopbuy Answers",
+  "targetAgent": "Oopbuy",
+  "domain": "oopbuyanswers.com",
+  "description": "A focused research site for approved answers to Oopbuy questions, with clear evidence roles and review status.",
+  "homeTitle": "Oopbuy question research",
+  "homeSubtitle": "Search approved answers by task.",
+  "searchLabel": "Search Oopbuy questions",
+  "searchPlaceholder": "Search Oopbuy questions",
+  "emptyQuestionsTitle": "No approved questions are public yet.",
+  "emptyQuestionsBody": "Topics will appear after approved questions are published.",
+  "footerDisclosure": "Research pages separate community questions, search demand, first-party sources, public demonstrations, and CuriCart product data.",
+  "aboutTitle": "About Oopbuy Answers",
+  "aboutBody": "Oopbuy Answers is a focused research site for Oopbuy-related user questions. It does not represent Oopbuy and does not claim a business relationship with the platform.",
+  "topicsEmptyBody": "QC, product links, spreadsheet, shipping, and SKU or size topics remain unpublished until their first answer passes review.",
+  "unknownsBody": "No Oopbuy question is approved for publication yet. Current first-party QC facts and the CuriCart read-only API contract are still pending review."
+}

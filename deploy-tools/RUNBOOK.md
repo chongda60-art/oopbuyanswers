@@ -29,6 +29,14 @@ Approved Git push and Vercel production deployment:
 powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\run-all.ps1 -ExecutePush -DeployVercel -VerifyVercelDomains
 ```
 
+If terminal GitHub access is temporarily blocked but the reviewed local source must still deploy to Vercel, run:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\deploy.ps1 -Execute -SkipGitPush -Vercel
+```
+
+Then retry `git push origin HEAD` when GitHub connectivity is available.
+
 Approved full validation with screenshots:
 
 ```powershell
@@ -41,6 +49,7 @@ Every `run-all.ps1` run writes a transcript to `reports/deploy-run-*.log`.
 
 - `common.ps1`: shared config, Node runtime path, curl helpers, and log path helper.
 - `preflight.ps1`: project file checks, Git remote check, secret-pattern scan, and indexing guard.
+- `validate-content.ps1`: validates question fixtures, CuriCart bridge fields, renderable status, max five product cards, UTM, CuriCart host, empty title/category/image prevention, and no local product routes.
 - `build.ps1`: preflight, `pnpm install --frozen-lockfile`, `pnpm check`, `pnpm lint`, and `pnpm build`.
 - `deploy.ps1`: dry-run by default; with `-Execute` pushes to GitHub; with `-Vercel` also deploys production through Vercel CLI.
 - `dns-plan.ps1`: prints required DNS records and observed public DNS; with `-VerifyWithVercel` runs Vercel domain verification.
@@ -51,6 +60,23 @@ Every `run-all.ps1` run writes a transcript to `reports/deploy-run-*.log`.
 ## Indexing launch gate
 
 Keep `NEXT_PUBLIC_LAUNCH_INDEXING=false` until the first professional question page, official facts, content review, fact review, SEO review, and indexing launch are separately approved. Do not submit Search Console, Bing, IndexNow, or a sitemap before that approval.
+
+## Reusable Buy-site content loop
+
+For another single-Buy question site, reuse the same code path and change configuration/data only:
+
+1. Edit `content/site.json` for brand, target agent, domain, homepage copy, footer copy, and public source language.
+2. Convert the approved First 10 topic map into `content/questions.json`.
+3. Keep each article to one long-tail question with `targetKeyword`, `slug`, `title`, `h1`, `quickAnswer`, `evidenceSummary`, `steps`, `mistakes`, `unknowns`, `faq`, `sources`, `relatedTopics`, `relatedQuestions`, and `curicartBridge`.
+4. Use `curicartBridge` only for `productPreview` or `categoryLink`.
+5. `productPreview` renders only when status or matchStatus is `approved/current`, `matchReason` is non-empty, product name, image URL, category, Style/SKU, source type, canonical CuriCart URL, UTM URL, and verified date are complete.
+6. `categoryLink` renders only when status or matchStatus is `approved/current`, `matchReason` is non-empty, and the link points to a canonical CuriCart category URL with UTM.
+7. UTM must stay `utm_source=oopbuyanswers`, `utm_medium=referral`, `utm_campaign=oopbuy_questions`, and `utm_content={question_slug_or_topic_slug}` unless a new approved site config explicitly changes it.
+8. Do not create local product detail routes. Product and category cards must leave to CuriCart.
+9. Run `powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\validate-content.ps1`, then `run-all.ps1`.
+10. Keep `NEXT_PUBLIC_LAUNCH_INDEXING=false` until content, fact, SEO, and indexing launch are separately approved.
+
+The public Bridge component is `components/CuricartBridge.tsx`. It uses horizontal card grids: desktop roughly four product cards, tablet two columns, mobile one column. Category bridge cards use the same data rules and responsive system.
 
 ## DNS rule
 

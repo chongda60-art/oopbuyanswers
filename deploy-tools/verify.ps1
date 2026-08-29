@@ -25,4 +25,17 @@ foreach ($path in @($config.Required404Paths)) {
   $status = ($line -split "`t")[1]
   if ($status -ne '404') { throw "Expected 404 for $path, got $status ($line)" }
 }
+
+$bridgePages = @('/','/questions/oopbuy-qc-photos','/topics/qc')
+foreach ($path in $bridgePages) {
+  $pageHtml = Get-CurlText -Url "$($config.ProductionUrl)$path"
+  if ($pageHtml -notmatch 'CuriCart bridge') { throw "CuriCart bridge missing on $path" }
+  if ($pageHtml -match 'href="/product/' -or $pageHtml -match "href='/product/") { throw "Local product link detected on $path" }
+  if ($pageHtml -match 'https://www\.curicart\.com' -and $pageHtml -notmatch 'utm_source=oopbuyanswers') {
+    throw "CuriCart URL without oopbuyanswers UTM detected on $path"
+  }
+  if ($pageHtml -match 'bridge-image' -and $pageHtml -match '<img[^>]+src=""') { throw "Empty bridge image detected on $path" }
+  if ($pageHtml -match 'bridge-meta">\s*</span>') { throw "Empty bridge category label detected on $path" }
+  if ($pageHtml -match 'bridge-title">\s*</span>') { throw "Empty bridge title detected on $path" }
+}
 Write-Output 'VERIFY_OK'

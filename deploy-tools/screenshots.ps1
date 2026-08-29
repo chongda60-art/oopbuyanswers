@@ -15,8 +15,11 @@ try {
   pnpm dlx playwright screenshot --channel chrome --viewport-size 390,844 --full-page --timeout 60000 "$($config.ProductionUrl)/" "reports/screenshots/oopbuyanswers-production-mobile.png"
   pnpm dlx playwright screenshot --channel chrome --viewport-size 1440,1100 --full-page --timeout 60000 "$($config.ProductionUrl)/questions/" "reports/screenshots/oopbuyanswers-questions-desktop.png"
   pnpm dlx playwright screenshot --channel chrome --viewport-size 390,844 --full-page --timeout 60000 "$($config.ProductionUrl)/questions/" "reports/screenshots/oopbuyanswers-questions-mobile.png"
+  pnpm dlx playwright screenshot --channel chrome --viewport-size 1440,1400 --full-page --timeout 60000 "$($config.ProductionUrl)/questions/oopbuy-qc-photos" "reports/screenshots/oopbuyanswers-question-bridge-desktop.png"
+  pnpm dlx playwright screenshot --channel chrome --viewport-size 390,1200 --full-page --timeout 60000 "$($config.ProductionUrl)/questions/oopbuy-qc-photos" "reports/screenshots/oopbuyanswers-question-bridge-mobile.png"
+  pnpm dlx playwright screenshot --channel chrome --viewport-size 1440,1100 --full-page --timeout 60000 "$($config.ProductionUrl)/topics/qc" "reports/screenshots/oopbuyanswers-topic-qc-desktop.png"
+  pnpm dlx playwright screenshot --channel chrome --viewport-size 390,844 --full-page --timeout 60000 "$($config.ProductionUrl)/topics/qc" "reports/screenshots/oopbuyanswers-topic-qc-mobile.png"
   Write-Output 'SCREENSHOTS_OK'
 } finally {
   Pop-Location
 }
-

@@ -1,5 +1,27 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { contentConfig, publicTopics } from "@/lib/content";
+import { siteConfig } from "@/lib/config";
 
-export const metadata: Metadata = { title: "Topics", description: "Oopbuy research topics appear only when approved questions are published.", alternates: { canonical: "/topics" } };
+export const metadata: Metadata = { title: "Topics", description: `${siteConfig.targetAgent} research topics appear only when approved questions are published.`, alternates: { canonical: "/topics" } };
 
-export default function TopicsPage() { return <main className="page"><header className="page-heading"><h1>Topics</h1><p>Topic pages are created only when they contain approved, published questions.</p></header><section className="empty-state compact"><h2>No topics are public yet.</h2><p>QC, product links, spreadsheet, shipping, and SKU or size topics remain unpublished until their first answer passes review.</p></section></main>; }
+export default function TopicsPage() {
+  return (
+    <main className="page">
+      <header className="page-heading">
+        <h1>Topics</h1>
+        <p>Topic pages are created only when they contain approved, published questions.</p>
+      </header>
+      {publicTopics.length === 0 ? (
+        <section className="empty-state compact">
+          <h2>No topics are public yet.</h2>
+          <p>{contentConfig.topicsEmptyBody}</p>
+        </section>
+      ) : (
+        <section className="topic-pills topic-index" aria-label="Public topics">
+          {publicTopics.map((topic) => <Link href={`/topics/${topic}`} key={topic}>{topic}</Link>)}
+        </section>
+      )}
+    </main>
+  );
+}

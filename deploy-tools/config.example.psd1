@@ -10,7 +10,7 @@
   VercelARecords = @('216.198.79.1','64.29.17.1')
   VercelWwwCname = 'afb45460b24bbbef.vercel-dns-017.com'
   LaunchIndexing = $false
-  Required200Paths = @('/','/questions','/topics','/sources','/about','/contact','/privacy','/robots.txt','/sitemap.xml')
+  Required200Paths = @('/','/questions','/topics','/topics/qc','/questions/oopbuy-qc-photos','/sources','/about','/contact','/privacy','/robots.txt','/sitemap.xml')
   Required404Paths = @('/spreadsheet','/qcfinder','/product/demo')
-  ForbiddenPublicText = @('Where can I see Oopbuy QC photos','Demo black socks','Demo fragrance')
+  ForbiddenPublicText = @('What this site will publish','Read the source method','Demo black socks','Demo fragrance')
 }

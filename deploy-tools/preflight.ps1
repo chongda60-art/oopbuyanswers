@@ -19,6 +19,7 @@ try {
 $secretHits = rg -n --hidden -g '!node_modules/**' -g '!.next/**' -g '!.git/**' '(ghp_[A-Za-z0-9]{20,}|vercel_[A-Za-z0-9_-]{20,}|BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|password\s*=)' $root
 if ($LASTEXITCODE -eq 0) { throw "Potential secret detected. Inspect before deploy.`n$secretHits" }
 if ([bool]$config.LaunchIndexing) { throw 'LaunchIndexing must remain false until content and indexing approval.' }
+& "$PSScriptRoot\validate-content.ps1" -ProjectRoot $root
 Write-Output 'PREFLIGHT_OK'
 Write-Output "ProjectRoot=$root"
 Write-Output "LaunchIndexing=$($config.LaunchIndexing)"
