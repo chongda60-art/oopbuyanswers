@@ -21,10 +21,11 @@ Validation commands passed:
 
 Production deployment:
 
-- Deployment id: `dpl_Hq74YhF9cGAvNmZmCKHauuapesmj`
-- Inspect URL: `https://vercel.com/chen-d2eb/oopbuyanswers/Hq74YhF9cGAvNmZmCKHauuapesmj`
+- Git commit: `5105ff0 Add Oopbuy question bridge content system`
+- Deployment id: `dpl_6wimhpyo3YdXbLwVVUjLFxgbKM4r`
+- Inspect URL: `https://vercel.com/chen-d2eb/oopbuyanswers/6wimhpyo3YdXbLwVVUjLFxgbKM4r`
 - Production URL: `https://oopbuyanswers.com/`
-- Vercel deployment URL: `https://oopbuyanswers-949fs6c11-chen-d2eb.vercel.app`
+- Vercel deployment URL: `https://oopbuyanswers-8w05le8on-chen-d2eb.vercel.app`
 
 New screenshots:
 
@@ -39,7 +40,7 @@ New screenshots:
 
 Current limitation:
 
-- Terminal GitHub push failed because direct terminal HTTPS access to `github.com:443` timed out/reset. Local commit `7abcf0a` exists and production was deployed directly from local source through Vercel CLI. Retry `git push origin HEAD` when terminal GitHub connectivity is available.
+- Approved CuriCart product API data is still not connected, so live product preview cards remain hidden. Category bridge cards are live and verified.
 
 Status: implementation, GitHub push, Vercel production deployment, Spaceship DNS connection, HTTPS, apex/www redirect, and noindex prelaunch validation are complete.
 
