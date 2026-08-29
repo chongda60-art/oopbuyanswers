@@ -1,6 +1,6 @@
 # Oopbuy Answers validation report
 
-Status: implementation, local validation, GitHub push, and Vercel production deployment complete. Custom-domain DNS is pending Spaceship record update.
+Status: implementation, GitHub push, Vercel production deployment, Spaceship DNS connection, HTTPS, apex/www redirect, and noindex prelaunch validation are complete.
 
 ## Local build
 
@@ -25,6 +25,12 @@ Status: implementation, local validation, GitHub push, and Vercel production dep
 - Navigation, H1, search control, empty state, evidence-method link, and footer were visible in both DOM checks.
 - No visible overlap or horizontal clipping observed in saved screenshots.
 - Screenshots: `reports/screenshots/local-desktop.png`, `reports/screenshots/local-mobile.png`.
+- Production screenshots:
+  - `reports/screenshots/oopbuyanswers-production-desktop.png`
+  - `reports/screenshots/oopbuyanswers-production-mobile.png`
+  - `reports/screenshots/oopbuyanswers-questions-desktop.png`
+  - `reports/screenshots/oopbuyanswers-questions-mobile.png`
+  - `reports/screenshots/spaceship-dns-final-records.png`
 
 ## Production
 
@@ -34,14 +40,15 @@ Status: implementation, local validation, GitHub push, and Vercel production dep
   - `149e00e` - `Ignore local deploy tool config`.
   - `c9a45f3` - `Document Vercel deployment workflow`.
   - `5e58ad1` - `Redirect www to apex`.
+  - `8d33f3c` - `Update deployment validation report`.
 - Vercel account/scope: `chen-d2eb`.
 - Vercel project: `oopbuyanswers`.
 - Vercel project id: `prj_UniyNy1KPTUU5XXDGjoXFw5EUC7s`.
 - GitHub connection: Vercel CLI `git connect` completed for `https://github.com/chongda60-art/oopbuyanswers`.
-- Production deployment id: `dpl_2EteUNgMtCLA87wwGtcYQT4DAsS8`.
-- Production inspect URL: `https://vercel.com/chen-d2eb/oopbuyanswers/2EteUNgMtCLA87wwGtcYQT4DAsS8`.
+- Production deployment id: `dpl_9KNp2B6qCFejaG3EJ3cTAtZduM6a`.
+- Production inspect URL: `https://vercel.com/chen-d2eb/oopbuyanswers/9KNp2B6qCFejaG3EJ3cTAtZduM6a`.
 - Public Vercel alias: `https://oopbuyanswers.vercel.app`.
-- Latest deployment URL: `https://oopbuyanswers-401g4bckf-chen-d2eb.vercel.app`.
+- Latest deployment URL: `https://oopbuyanswers-j9uha6nq0-chen-d2eb.vercel.app`.
 - Vercel environment variables:
   - `NEXT_PUBLIC_LAUNCH_INDEXING=false`
   - `NEXT_PUBLIC_SITE_URL=https://oopbuyanswers.com`
@@ -54,9 +61,27 @@ Status: implementation, local validation, GitHub push, and Vercel production dep
   - `@` A `216.198.79.1`
   - `@` A `64.29.17.1`
   - `www` CNAME `afb45460b24bbbef.vercel-dns-017.com.`
-- Current DNS observed by Vercel before Spaceship update:
-  - nameservers: `launch1.spaceship.net`, `launch2.spaceship.net`
-  - apex A: `54.149.79.189`, `34.216.117.25`
-  - www CNAME: none
-- Custom domain status: pending Spaceship DNS update and propagation.
-- HTTPS/apex/www redirect: pending DNS update.
+- Spaceship DNS records added on 2026-08-29:
+  - `@` A `216.198.79.1`
+  - `@` A `64.29.17.1`
+  - `www` CNAME `afb45460b24bbbef.vercel-dns-017.com`
+  - TTL: 30 minutes.
+  - Nameservers remained `launch1.spaceship.net` and `launch2.spaceship.net`.
+- Vercel domain verification:
+  - `oopbuyanswers.com`: `configured_correctly`, attached to project `oopbuyanswers`.
+  - `www.oopbuyanswers.com`: `configured_correctly`, attached to project `oopbuyanswers`.
+- Vercel certificate:
+  - Certificate id: `cert_5vAAv5I2yNKPx5UTRawCNcRi`.
+  - Covers `oopbuyanswers.com` and `www.oopbuyanswers.com`.
+  - Auto renew: yes.
+- Production HTTP/HTTPS validation on 2026-08-29:
+  - `https://oopbuyanswers.com/`: HTTP 200.
+  - `https://www.oopbuyanswers.com/`: HTTP 308 to `https://oopbuyanswers.com/`.
+  - `/questions`, `/topics`, `/sources`, `/about`, `/contact`, `/privacy`: HTTP 200.
+  - `/spreadsheet`, `/qcfinder`, `/product/demo`: HTTP 404.
+  - Home meta robots: `noindex, nofollow`.
+  - `robots.txt`: `User-Agent: *` and `Disallow: /`.
+  - `sitemap.xml`: empty URL set while launch indexing is disabled.
+- Automated verification:
+  - `deploy-tools/verify.ps1`: passed with `VERIFY_OK`.
+  - Log: `reports/verify-20260829-162516.log`.
