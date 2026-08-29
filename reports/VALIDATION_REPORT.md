@@ -85,3 +85,9 @@ Status: implementation, GitHub push, Vercel production deployment, Spaceship DNS
 - Automated verification:
   - `deploy-tools/verify.ps1`: passed with `VERIFY_OK`.
   - Log: `reports/verify-20260829-162516.log`.
+- Latest post-report GitHub auto-deployment check:
+  - Commit: `d1f22f1` (`Finalize domain validation and runbook`).
+  - Production deployment id: `dpl_x5XpdcJpfBeYXpPFkJJnZJvLAEiQ`.
+  - Production deployment URL: `https://oopbuyanswers-1z0eq0074-chen-d2eb.vercel.app`.
+  - Status: Ready.
+  - Final `deploy-tools/verify.ps1`: `VERIFY_OK`.
