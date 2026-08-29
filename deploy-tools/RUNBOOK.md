@@ -1,5 +1,9 @@
 # Oopbuy Answers deployment runbook
 
+All scripts live under `F:\seojieliu\deploy-tools`. They read `config.psd1` when present, otherwise they fall back to `config.example.psd1`.
+
+Do not commit `config.psd1`, `.vercel`, environment files, cookies, browser sessions, tokens, or DNS credentials.
+
 ## Default safe path
 
 1. Copy `config.example.psd1` to `config.psd1` and set the real Git remote.
@@ -10,6 +14,39 @@
 6. Run `powershell -File .\deploy-tools\deploy.ps1 -Execute -Vercel` only when a production Vercel deployment is approved.
 7. After Vercel reports Ready and domains are Valid, run `powershell -File .\deploy-tools\verify.ps1`.
 8. Save the output log under `reports/`.
+
+## One-command flow
+
+Dry run. This performs preflight, install/check/lint/build, prints git status, prints DNS requirements, and verifies the current production domain. It does not push or deploy.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\run-all.ps1
+```
+
+Approved Git push and Vercel production deployment:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\run-all.ps1 -ExecutePush -DeployVercel -VerifyVercelDomains
+```
+
+Approved full validation with screenshots:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\run-all.ps1 -VerifyVercelDomains -CaptureScreenshots
+```
+
+Every `run-all.ps1` run writes a transcript to `reports/deploy-run-*.log`.
+
+## Script map
+
+- `common.ps1`: shared config, Node runtime path, curl helpers, and log path helper.
+- `preflight.ps1`: project file checks, Git remote check, secret-pattern scan, and indexing guard.
+- `build.ps1`: preflight, `pnpm install --frozen-lockfile`, `pnpm check`, `pnpm lint`, and `pnpm build`.
+- `deploy.ps1`: dry-run by default; with `-Execute` pushes to GitHub; with `-Vercel` also deploys production through Vercel CLI.
+- `dns-plan.ps1`: prints required DNS records and observed public DNS; with `-VerifyWithVercel` runs Vercel domain verification.
+- `verify.ps1`: checks production status, www redirect, noindex meta, robots, empty sitemap, required 200 pages, required 404 pages, and forbidden draft/fixture text.
+- `screenshots.ps1`: captures production desktop/mobile screenshots for home and Questions.
+- `run-all.ps1`: orchestrates the full flow and logs the run.
 
 ## Indexing launch gate
 

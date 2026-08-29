@@ -30,5 +30,9 @@ deploy-tools/config.psd1
 reports/screenshots/spaceship-*.png
 !reports/screenshots/spaceship-dns-final-records.png
 reports/verify-*.log
+reports/deploy-run-*.log
+reports/screenshots/after-*.png
+reports/screenshots/chrome-after-*.png
+reports/screenshots/foreground-*.png
 
 .vercel

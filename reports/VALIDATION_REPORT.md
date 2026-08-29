@@ -91,3 +91,19 @@ Status: implementation, GitHub push, Vercel production deployment, Spaceship DNS
   - Production deployment URL: `https://oopbuyanswers-1z0eq0074-chen-d2eb.vercel.app`.
   - Status: Ready.
   - Final `deploy-tools/verify.ps1`: `VERIFY_OK`.
+
+## Deployment automation
+
+- Low-token scripts are consolidated under `deploy-tools/`.
+- Default one-command dry run:
+  - `powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\run-all.ps1`
+  - Result on 2026-08-29: `RUN_ALL_OK`.
+  - Log: `reports/deploy-run-20260829-222316.log`.
+- Approved production command:
+  - `powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\run-all.ps1 -ExecutePush -DeployVercel -VerifyVercelDomains`
+- Optional production screenshot command:
+  - `powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\screenshots.ps1`
+- DNS automation boundary:
+  - `deploy-tools\dns-plan.ps1` prints required DNS records and observed DNS, and can run Vercel domain verification.
+  - It does not write Spaceship DNS records or store credentials.
+  - Any future DNS write automation must use verified Spaceship official API credentials kept outside Git.

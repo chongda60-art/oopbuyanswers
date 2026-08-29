@@ -1,14 +1,14 @@
 param(
   [switch]$Execute,
   [switch]$Vercel,
+  [switch]$SkipBuild,
   [string]$ConfigPath = "$PSScriptRoot\config.psd1"
 )
 $ErrorActionPreference = 'Stop'
-& "$PSScriptRoot\build.ps1" -ConfigPath $ConfigPath
-$config = if (Test-Path -LiteralPath $ConfigPath) { Import-PowerShellDataFile -LiteralPath $ConfigPath } else { Import-PowerShellDataFile -LiteralPath "$PSScriptRoot\config.example.psd1" }
-$nodeBin = 'C:\Users\92822\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin'
-$pnpmBin = 'C:\Users\92822\.cache\codex-runtimes\codex-primary-runtime\dependencies\bin\fallback'
-$env:PATH = "$nodeBin;$pnpmBin;$env:PATH"
+. "$PSScriptRoot\common.ps1"
+if (-not $SkipBuild) { & "$PSScriptRoot\build.ps1" -ConfigPath $ConfigPath }
+$config = Get-OopbuyDeployConfig -ConfigPath $ConfigPath
+Use-OopbuyNodeRuntime
 Push-Location -LiteralPath $config.ProjectRoot
 try {
   git status --short --branch
@@ -18,7 +18,7 @@ try {
   if ($LASTEXITCODE -ne 0) { throw 'git push failed' }
   Write-Output 'PUSH_OK'
   if ($Vercel) {
-    pnpm dlx vercel --prod --yes --scope chen-d2eb
+    pnpm dlx vercel --prod --yes --scope $config.VercelScope
     if ($LASTEXITCODE -ne 0) { throw 'Vercel production deployment failed' }
     Write-Output 'VERCEL_DEPLOY_OK'
   }
