@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/config";
 const links = [
   ["/questions", "Questions"],
   ["/topics", "Topics"],
-  ["/sources", "Sources"],
+  ["/#product-categories", "Product Categories"],
   ["/about", "About"],
 ] as const;
 
@@ -15,6 +15,7 @@ export function Header() {
         <Link className="brand" href="/">{siteConfig.brand}</Link>
         <nav aria-label="Primary navigation">
           {links.map(([href, label]) => <Link href={href} key={href}>{label}</Link>)}
+          <Link className="nav-button" href="/questions">Browse questions</Link>
         </nav>
       </div>
     </header>

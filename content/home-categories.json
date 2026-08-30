@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "shoes",
+    "name": "Shoes",
+    "canonicalUrl": "https://www.curicart.com/en/Newproduct.html",
+    "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=home-category-shoes",
+    "visual": "sole"
+  },
+  {
+    "slug": "t-shirts",
+    "name": "T-Shirts",
+    "canonicalUrl": "https://www.curicart.com/en/Newproduct.html",
+    "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=home-category-t-shirts",
+    "visual": "tee"
+  },
+  {
+    "slug": "hoodies",
+    "name": "Hoodies",
+    "canonicalUrl": "https://www.curicart.com/en/Newproduct.html",
+    "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=home-category-hoodies",
+    "visual": "hood"
+  },
+  {
+    "slug": "jackets",
+    "name": "Jackets",
+    "canonicalUrl": "https://www.curicart.com/en/Newproduct.html",
+    "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=home-category-jackets",
+    "visual": "zip"
+  },
+  {
+    "slug": "pants",
+    "name": "Pants/Shorts",
+    "canonicalUrl": "https://www.curicart.com/en/Newproduct.html",
+    "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=home-category-pants",
+    "visual": "leg"
+  },
+  {
+    "slug": "headwear",
+    "name": "Headwear",
+    "canonicalUrl": "https://www.curicart.com/en/Newproduct.html",
+    "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=home-category-headwear",
+    "visual": "cap"
+  },
+  {
+    "slug": "accessories",
+    "name": "Accessories",
+    "canonicalUrl": "https://www.curicart.com/en/Newproduct.html",
+    "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=home-category-accessories",
+    "visual": "grid"
+  },
+  {
+    "slug": "bags",
+    "name": "Bags",
+    "canonicalUrl": "https://www.curicart.com/en/Newproduct.html",
+    "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=home-category-bags",
+    "visual": "bag"
+  },
+  {
+    "slug": "all-products",
+    "name": "All Product",
+    "canonicalUrl": "https://www.curicart.com/en/Newproduct.html",
+    "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=home-category-all-products",
+    "visual": "all"
+  }
+]

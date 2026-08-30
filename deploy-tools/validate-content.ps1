@@ -2,9 +2,11 @@ param([string]$ProjectRoot = 'F:\seojieliu')
 $ErrorActionPreference = 'Stop'
 
 $questionsPath = Join-Path $ProjectRoot 'content\questions.json'
+$homeCategoriesPath = Join-Path $ProjectRoot 'content\home-categories.json'
 if (-not (Test-Path -LiteralPath $questionsPath)) { throw "Missing content source: $questionsPath" }
 
 $questions = Get-Content -LiteralPath $questionsPath -Raw | ConvertFrom-Json
+$homeCategories = if (Test-Path -LiteralPath $homeCategoriesPath) { Get-Content -LiteralPath $homeCategoriesPath -Raw | ConvertFrom-Json } else { @() }
 $allowedPublicStatuses = @('approved','published')
 $allowedBridgeStatuses = @('approved','current')
 $requiredProductFields = @('productName','imageUrl','curicartCategory','styleOrSku','sourceType','canonicalUrl','utmUrl','matchReason','verifiedAt','status')
@@ -84,6 +86,14 @@ foreach ($question in $questions) {
   }
 }
 
+foreach ($category in @($homeCategories)) {
+  foreach ($field in @('slug','name','canonicalUrl','utmUrl','visual')) {
+    if (-not (Test-Text $category.$field)) { Add-ValidationError "home category missing $field" }
+  }
+  $utmError = Test-CuricartUtm -Url $category.utmUrl -Slug "home-category-$($category.slug)"
+  if ($utmError) { Add-ValidationError "home category $($category.slug): $utmError" }
+}
+
 if ($errors.Count -gt 0) {
   throw "CONTENT_VALIDATE_FAILED`n$($errors -join "`n")"
 }
@@ -91,3 +101,4 @@ if ($errors.Count -gt 0) {
 Write-Output 'CONTENT_VALIDATE_OK'
 Write-Output "Questions=$($questions.Count)"
 Write-Output "PublicQuestions=$($publicQuestions.Count)"
+Write-Output "HomeCategories=$(@($homeCategories).Count)"

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { Viewport } from "next";
 import "./globals.css";
+import "./ui.css";
 import { Header } from "@/components/Header";
 import { contentConfig } from "@/lib/content";
 import { siteConfig } from "@/lib/config";

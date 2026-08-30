@@ -71,9 +71,7 @@ export const contentConfig = siteContent;
 
 export const allQuestions = questions as QuestionRecord[];
 
-export const publicQuestions = allQuestions.filter((question) =>
-  question.status === "approved" || question.status === "published"
-);
+export const publicQuestions = allQuestions.filter((question) => question.status !== "archived" && question.status !== "hold");
 
 export const getPublicQuestion = (slug: string) => publicQuestions.find((question) => question.slug === slug);
 

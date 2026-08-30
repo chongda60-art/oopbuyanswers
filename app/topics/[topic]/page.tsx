@@ -12,7 +12,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: Promise<{ topic: string }> }): Promise<Metadata> {
   return params.then(({ topic }) => ({
     title: `${topic} questions`,
-    description: `Approved Oopbuy Answers questions for ${topic}.`,
+    description: `Oopbuy Answers questions for ${topic}.`,
     alternates: { canonical: `/topics/${topic}` },
   }));
 }
@@ -34,12 +34,12 @@ export default async function TopicPage({ params }: { params: Promise<{ topic: s
       <header className="page-heading">
         <p className="eyebrow">Topic</p>
         <h1>{topic} questions</h1>
-        <p>Approved answers only. Similar questions are grouped into one canonical answer instead of thin synonym pages.</p>
+        <p>Find focused answers for related Oopbuy questions without sorting through duplicate wording.</p>
       </header>
       <section className="question-grid">
         {questions.map((question) => <QuestionCard question={question} key={question.id} />)}
       </section>
-      <CuricartBridge items={bridgeItems} contentSlug={topic} title="Related CuriCart category exits" />
+      <CuricartBridge items={bridgeItems} contentSlug={topic} />
     </main>
   );
 }

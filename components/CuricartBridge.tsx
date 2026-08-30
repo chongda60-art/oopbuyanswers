@@ -14,32 +14,28 @@ const productItems = (items: CuricartBridgeItem[]) =>
 const categoryItems = (items: CuricartBridgeItem[]) =>
   items.filter((item) => item.type === "categoryLink" && isRenderableBridgeItem(item));
 
-export function CuricartBridge({ items, contentSlug, title = "Related CuriCart research exits" }: Props) {
+export function CuricartBridge({ items, contentSlug, title = "Related product research" }: Props) {
   const products = productItems(items);
   const categories = categoryItems(items);
 
   if (products.length === 0 && categories.length === 0) return null;
 
   return (
-    <section className="curicart-bridge" aria-labelledby={`curicart-bridge-${contentSlug}`}>
-      <div className="bridge-heading">
-        <p className="eyebrow">CuriCart bridge</p>
-        <h2 id={`curicart-bridge-${contentSlug}`}>{title}</h2>
-        <p>
-          These links leave Oopbuy Answers and open canonical CuriCart pages with referral UTM.
-          Product cards render only when approved CuriCart data is complete.
-        </p>
+    <section className="related-product-research" aria-labelledby={`related-products-${contentSlug}`}>
+      <div className="related-product-heading">
+        <h2 id={`related-products-${contentSlug}`}>{title}</h2>
+        <p>Browse related product categories and examples while checking this question.</p>
       </div>
 
       {products.length > 0 ? (
-        <div className="bridge-grid product-grid" data-bridge-kind="productPreview">
+        <div className="related-product-grid product-grid" data-card-kind="productPreview">
           {products.map((item, index) => {
             if (item.type !== "productPreview") return null;
             const label = `${item.productName} ${item.styleOrSku}`.trim();
             const href = contentSlug === "home" ? item.utmUrl : withUtm(item.canonicalUrl, contentSlug);
             return (
-              <a className="bridge-card product-card" href={href} key={`${item.canonicalUrl}-${item.styleOrSku}`}>
-                <span className="bridge-image">
+              <a className="research-card product-card" href={href} key={`${item.canonicalUrl}-${item.styleOrSku}`}>
+                <span className="research-card-image">
                   <Image
                     src={item.imageUrl}
                     alt={`${item.productName} in ${item.curicartCategory}`}
@@ -49,10 +45,10 @@ export function CuricartBridge({ items, contentSlug, title = "Related CuriCart r
                     loading={index === 0 ? "eager" : "lazy"}
                   />
                 </span>
-                <span className="bridge-meta">{item.curicartCategory}</span>
-                <span className="bridge-title">{label}</span>
-                <span className="bridge-reason">{item.matchReason}</span>
-                <span className="bridge-cta">Open on CuriCart</span>
+                <span className="research-card-meta">{item.curicartCategory}</span>
+                <span className="research-card-title">{label}</span>
+                <span className="research-card-reason">{item.matchReason}</span>
+                <span className="research-card-cta">View example</span>
               </a>
             );
           })}
@@ -60,16 +56,16 @@ export function CuricartBridge({ items, contentSlug, title = "Related CuriCart r
       ) : null}
 
       {categories.length > 0 ? (
-        <div className="bridge-grid category-grid" data-bridge-kind="categoryLink">
+        <div className="related-product-grid category-grid" data-card-kind="categoryLink">
           {categories.map((item) => {
             if (item.type !== "categoryLink") return null;
             const href = contentSlug === "home" ? item.utmUrl : withUtm(item.canonicalUrl, contentSlug);
             return (
-              <a className="bridge-card category-card" href={href} key={item.canonicalUrl}>
-                <span className="bridge-meta">CuriCart category</span>
-                <span className="bridge-title">{item.categoryName}</span>
-                <span className="bridge-reason">{item.matchReason}</span>
-                <span className="bridge-cta">Open category on CuriCart</span>
+              <a className="research-card category-card" href={href} key={item.canonicalUrl}>
+                <span className="research-card-meta">Category</span>
+                <span className="research-card-title">{item.categoryName}</span>
+                <span className="research-card-reason">{item.matchReason}</span>
+                <span className="research-card-cta">{item.categoryName.toLowerCase().includes("guide") ? "Explore guide" : "Browse category"}</span>
               </a>
             );
           })}

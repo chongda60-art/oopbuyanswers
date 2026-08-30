@@ -12,5 +12,5 @@
   LaunchIndexing = $false
   Required200Paths = @('/','/questions','/topics','/topics/qc','/questions/oopbuy-qc-photos','/sources','/about','/contact','/privacy','/robots.txt','/sitemap.xml')
   Required404Paths = @('/spreadsheet','/qcfinder','/product/demo')
-  ForbiddenPublicText = @('What this site will publish','Read the source method','Demo black socks','Demo fragrance')
+  ForbiddenPublicText = @('CuriCart Bridge','category bridge','approved data','approved CuriCart data','referral UTM','These links leave','Open category on CuriCart','source method','What this site will publish','compliance','review gate','Demo black socks','Demo fragrance')
 }

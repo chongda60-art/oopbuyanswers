@@ -3,7 +3,7 @@ import { QuestionCard } from "@/components/QuestionCard";
 import { contentConfig, publicQuestions } from "@/lib/content";
 import { siteConfig } from "@/lib/config";
 
-export const metadata: Metadata = { title: "Questions", description: `Approved and published ${siteConfig.targetAgent} research questions.`, alternates: { canonical: "/questions" } };
+export const metadata: Metadata = { title: "Questions", description: `${siteConfig.targetAgent} research questions by topic and product-check task.`, alternates: { canonical: "/questions" } };
 
 export default function QuestionsPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
   void searchParams;
@@ -11,7 +11,7 @@ export default function QuestionsPage({ searchParams }: { searchParams: Promise<
     <main className="page">
       <header className="page-heading">
         <h1>Questions</h1>
-        <p>Approved and published only.</p>
+        <p>Search Oopbuy answers by question, topic, or product-check task.</p>
       </header>
       <form className="library-search" role="search">
         <label className="sr-only" htmlFor="question-search">{contentConfig.searchLabel}</label>
