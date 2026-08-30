@@ -66,8 +66,8 @@ export default function Home() {
           </article>
           <article>
             <span>2</span>
-            <h3>Check known limits</h3>
-            <p>Separate what is known from what still needs checking.</p>
+            <h3>Check what can change</h3>
+            <p>Look for details that may change, such as page layout, timing, source links, or product options.</p>
           </article>
           <article>
             <span>3</span>

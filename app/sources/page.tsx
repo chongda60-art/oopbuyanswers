@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { contentConfig } from "@/lib/content";
 import { siteConfig } from "@/lib/config";
 
-export const metadata: Metadata = { title: "Sources and evidence", description: `How ${siteConfig.brand} separates demand signals, demonstrations, first-party facts, and product data.`, alternates: { canonical: "/sources" } };
+export const metadata: Metadata = { title: "Sources and references", description: `How ${siteConfig.brand} uses shopper questions, search terms, videos, live pages, and product examples.`, alternates: { canonical: "/sources" } };
 
 const roles = [
-  ["Reddit", "Shows user questions, language, consensus, disagreement, and unusual cases. It does not verify current platform facts."],
-  ["Google", "Shows search expressions and visible result types. Autocomplete is not monthly search volume."],
-  ["YouTube", "Can show what a public video demonstrates at a specific time. It does not prove fees, policy, timing, or service quality."],
-  [`${siteConfig.targetAgent} first-party sources`, `Required for current ${siteConfig.targetAgent} workflows, policies, limits, fees, and other platform facts.`],
-  ["CuriCart", "May provide product images, category, SKU or style, size, reference price, source status, and canonical product links."],
+  ["Reddit", "Helps identify the questions shoppers ask and the problems they describe."],
+  ["Google", "Helps match the wording people use when they search for Oopbuy answers."],
+  ["YouTube", "Can show public walkthroughs or examples when a video is closely related to the question."],
+  [`${siteConfig.targetAgent} pages`, `Help readers check current screens, wording, and account-specific details.`],
+  ["Product examples", "Help readers compare photos, category context, SKU or style details, sizes, and source-page clues."],
 ] as const;
 
-export default function SourcesPage() { return <main className="page reading"><header className="page-heading"><h1>Sources and evidence</h1><p>Each source type has a limited role. A source is never used to prove more than it can support.</p></header><div className="source-list">{roles.map(([name, detail]) => <section key={name}><h2>{name}</h2><p>{detail}</p></section>)}</div><section className="unknown-panel"><h2>What remains unknown</h2><p>{contentConfig.unknownsBody}</p></section></main>; }
+export default function SourcesPage() { return <main className="page reading"><header className="page-heading"><h1>Sources and references</h1><p>Oopbuy pages, community discussions, search wording, videos, and product examples each help answer a different part of a shopper question.</p></header><div className="source-list">{roles.map(([name, detail]) => <section key={name}><h2>{name}</h2><p>{detail}</p></section>)}</div><section className="unknown-panel"><h2>What to recheck</h2><p>{contentConfig.unknownsBody}</p></section></main>; }

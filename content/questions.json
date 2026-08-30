@@ -7,12 +7,12 @@
     "h1": "Where can I see Oopbuy QC photos?",
     "status": "approved",
     "primaryKeyword": "oopbuy qc photos",
-    "searchIntent": "The user wants to understand where QC photos fit in the Oopbuy research workflow before continuing.",
+    "searchIntent": "Answer where Oopbuy QC photos fit before a shopper compares photos, product links, and size details.",
     "topic": "qc",
     "priority": 1,
     "updatedAt": "2026-08-29",
-    "quickAnswer": "Use QC photos as a product-check step, not as proof of shipping, item trust, delivery time, or platform service quality. This page keeps platform-specific facts marked Unknown until a current Oopbuy first-party source is verified.",
-    "evidenceSummary": "Search demand appears around Oopbuy QC photos and related QC finder searches. Community posts and videos can show what users ask, but current platform claims still need a first-party source.",
+    "quickAnswer": "Use QC photos as one product-check step, not as proof of shipping, item trust, delivery time, or service quality. Current Oopbuy screens can change, so check the live account page before treating any path or timing as final.",
+    "evidenceSummary": "Searches around Oopbuy QC photos and QC finder pages show that shoppers want a clearer way to compare photos, links, and item details. Community posts and videos can show the question, but live Oopbuy pages should be checked for current paths and timing.",
     "steps": [
       "Start with the source product link and product photos.",
       "Compare visible SKU, style, color, size, and category before relying on any QC image.",
@@ -32,20 +32,20 @@
     "faq": [
       {
         "question": "Does this page prove Oopbuy QC timing?",
-        "answer": "No. Timing is a platform fact and needs a current Oopbuy first-party source."
+        "answer": "No. Timing can change by account, item, route, and current Oopbuy page details."
       },
       {
-        "question": "Are related product links local Oopbuy Answers product pages?",
-        "answer": "No. They open the matching CuriCart product or category page."
+        "question": "Can I compare related product examples while checking QC photos?",
+        "answer": "Yes. Related categories can help you compare photos, SKU labels, sizes, and source-page context before choosing what to inspect next."
       }
     ],
     "sources": [
       {
-        "type": "topic_map",
-        "label": "Oopbuy question map",
+        "type": "reference",
+        "label": "Oopbuy QC research notes",
         "url": "content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md",
         "checkedAt": "2026-08-29",
-        "proves": "Question priority and unknown boundaries for this topic."
+        "proves": "Why this QC photo question is useful for shoppers and what still needs live-page checking."
       }
     ],
     "relatedTopics": [
@@ -64,7 +64,7 @@
         "categoryName": "New products",
         "canonicalUrl": "https://www.curicart.com/en/Newproduct.html",
         "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-qc-photos",
-        "matchReason": "Users checking QC photos usually need image-rich product context before continuing.",
+        "matchReason": "Browse recent product examples with photos, SKU or size details, and source-page context.",
         "status": "approved"
       },
       {
@@ -72,7 +72,7 @@
         "categoryName": "Brands",
         "canonicalUrl": "https://www.curicart.com/en/Brand.html",
         "utmUrl": "https://www.curicart.com/en/Brand.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-qc-photos",
-        "matchReason": "Brand and category context can help users compare product versions without using a local product detail copy.",
+        "matchReason": "Compare product examples by brand, category, photos, and visible option details.",
         "status": "approved"
       }
     ],
@@ -86,12 +86,12 @@
     "h1": "What can an Oopbuy QC finder actually verify?",
     "status": "approved",
     "primaryKeyword": "oopbuy qc finder",
-    "searchIntent": "The user wants a tool-like explanation of QC finder limits and visual checks.",
+    "searchIntent": "Explain what an Oopbuy QC finder can and cannot help a shopper compare.",
     "topic": "qc",
     "priority": 2,
     "updatedAt": "2026-08-29",
     "quickAnswer": "A QC finder can support visual comparison only when the image source, product link, and item attributes are clear. It cannot prove item trust, shipping, refunds, or platform performance by itself.",
-    "evidenceSummary": "The topic map records Google suggestions around Oopbuy QC finder, QC photos, QC pics, and spreadsheet QC searches.",
+    "evidenceSummary": "Search wording around Oopbuy QC finder, QC photos, QC pics, and spreadsheet QC shows that shoppers want help separating product photos from real QC context.",
     "steps": [
       "Check the original product link first.",
       "Compare visible photos against SKU, size, style, and color labels.",
@@ -116,11 +116,11 @@
     ],
     "sources": [
       {
-        "type": "topic_map",
-        "label": "Oopbuy question map",
+        "type": "reference",
+        "label": "Oopbuy QC finder notes",
         "url": "content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md",
         "checkedAt": "2026-08-29",
-        "proves": "Question priority and evidence boundary."
+        "proves": "Why QC finder pages should focus on photo comparison, link context, and missing details."
       }
     ],
     "relatedTopics": [
@@ -151,12 +151,12 @@
     "h1": "What should an Oopbuy spreadsheet with QC include?",
     "status": "approved",
     "primaryKeyword": "oopbuy spreadsheet with qc",
-    "searchIntent": "The user wants spreadsheet fields that help compare product photos, QC context, and links.",
+    "searchIntent": "Show what an Oopbuy spreadsheet with QC details should include before a shopper trusts it.",
     "topic": "spreadsheet",
     "priority": 3,
     "updatedAt": "2026-08-29",
     "quickAnswer": "A useful spreadsheet should show more than a keyword and a button. It should help compare product photos, source URL, SKU or style, size, category, reference price, status, and update date.",
-    "evidenceSummary": "The topic map records Google suggestions around Oopbuy spreadsheet, spreadsheet reddit, 2026, link, and spreadsheet with QC.",
+    "evidenceSummary": "Search wording around Oopbuy spreadsheet, spreadsheet reddit, 2026, links, and QC shows that shoppers want cleaner spreadsheet fields before choosing a product link.",
     "steps": [
       "Start with product title and image.",
       "Check source URL and category.",
@@ -181,11 +181,11 @@
     ],
     "sources": [
       {
-        "type": "topic_map",
-        "label": "Oopbuy question map",
+        "type": "reference",
+        "label": "Oopbuy spreadsheet notes",
         "url": "content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md",
         "checkedAt": "2026-08-29",
-        "proves": "Question priority and spreadsheet evidence boundary."
+        "proves": "Why a useful spreadsheet answer should focus on photos, SKU or size fields, source links, and notes."
       }
     ],
     "relatedTopics": [
@@ -225,12 +225,12 @@
     "h1": "Why can an Oopbuy shipping estimate look high?",
     "status": "review",
     "primaryKeyword": "oopbuy shipping cost",
-    "searchIntent": "The user wants cost context before using an agent.",
+    "searchIntent": "Help shoppers review why an Oopbuy shipping estimate may look high before treating it as final.",
     "topic": "shipping",
     "priority": 4,
     "updatedAt": "2026-08-29",
     "quickAnswer": "An Oopbuy shipping estimate can look high when the product size, weight, destination, route, packaging, or later parcel details differ from the first estimate. The exact reason for a specific order must be checked on the current Oopbuy page and the source order details.",
-    "evidenceSummary": "Search demand shows users compare Oopbuy shipping estimates with later costs. Current fee, route, and timing facts need first-party confirmation before this page can give exact numbers.",
+    "evidenceSummary": "Searches around Oopbuy shipping estimates show that shoppers compare early estimates with later parcel details. Exact numbers should be checked on the current Oopbuy page.",
     "steps": [
       "Check the product weight and dimensions shown for the item.",
       "Compare the estimate with the later parcel quote instead of treating them as the same value.",
@@ -267,12 +267,12 @@
     "h1": "What affects Oopbuy shipping time?",
     "status": "review",
     "primaryKeyword": "oopbuy shipping time",
-    "searchIntent": "The user wants delivery timing expectations.",
+    "searchIntent": "Help shoppers understand what can change Oopbuy shipping time.",
     "topic": "shipping",
     "priority": 5,
     "updatedAt": "2026-08-29",
     "quickAnswer": "Oopbuy shipping time can depend on seller handling, warehouse processing, parcel submission, route choice, destination, customs, and carrier updates. Treat any timeline as a current-page check, not a fixed promise.",
-    "evidenceSummary": "Search demand shows users ask about Oopbuy shipping time. Current delivery-time ranges and route details require first-party confirmation.",
+    "evidenceSummary": "Searches around Oopbuy shipping time show that shoppers want to understand which checkpoints can change timing, including warehouse status, parcel handling, route choice, and carrier updates.",
     "steps": [
       "Separate seller-to-warehouse time from international shipping time.",
       "Check whether the item has reached the warehouse before comparing route times.",
@@ -309,12 +309,12 @@
     "h1": "How should you compare Oopbuy shoe size labels?",
     "status": "approved",
     "primaryKeyword": "oopbuy size chart shoes",
-    "searchIntent": "The user wants shoe sizing context before ordering.",
+    "searchIntent": "Help shoppers compare shoe size, SKU, and photo details before choosing a product link.",
     "topic": "sku-size",
     "priority": 6,
     "updatedAt": "2026-08-29",
     "quickAnswer": "Compare the source size chart, SKU label, visible style, and any measurement context separately. Do not assume one seller's size label applies to every product.",
-    "evidenceSummary": "The topic map records Google suggestions around Oopbuy size chart, shoe size, shoe size guide, and spreadsheet sizes.",
+    "evidenceSummary": "Search wording around Oopbuy size chart, shoe size, shoe size guide, and spreadsheet sizes shows that shoppers need help comparing labels before picking a size.",
     "steps": [
       "Record the exact size label shown by the source.",
       "Compare EU, US, UK, CM, or JP units only when they are provided.",
@@ -339,11 +339,11 @@
     ],
     "sources": [
       {
-        "type": "topic_map",
-        "label": "Oopbuy question map",
+        "type": "reference",
+        "label": "Oopbuy sizing notes",
         "url": "content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md",
         "checkedAt": "2026-08-29",
-        "proves": "Question priority and size-label boundary."
+        "proves": "Why size answers should focus on visible labels, conversion notes, source-page details, and photo context."
       }
     ],
     "relatedTopics": [
@@ -375,17 +375,17 @@
     "h1": "How should you read an Oopbuy Weidian link?",
     "status": "approved",
     "primaryKeyword": "oopbuy weidian link",
-    "searchIntent": "The user wants source-link context for Weidian products.",
+    "searchIntent": "Help shoppers check Weidian product links before relying on spreadsheet notes.",
     "topic": "product-links",
     "priority": 7,
     "updatedAt": "2026-08-29",
     "quickAnswer": "Treat a Weidian link as a source context signal. Check the item ID, seller page, product title, images, SKU, color, size, and status before assuming the product is usable anywhere else.",
-    "evidenceSummary": "The topic map records Google suggestions around Oopbuy Weidian and Oopbuy to Weidian link.",
+    "evidenceSummary": "Search wording around Oopbuy Weidian and Oopbuy to Weidian links shows that shoppers need a simple way to preserve source-link details and compare product options.",
     "steps": [
       "Open the source URL context.",
       "Record visible item or seller identifiers when available.",
       "Compare product photos against SKU, style, color, and size labels.",
-      "Use CuriCart only as a research bridge, not as proof of Oopbuy import support."
+      "Use product examples for visual comparison only, not as proof of Oopbuy import support."
     ],
     "mistakes": [
       "Assuming a source link is accepted by Oopbuy today.",
@@ -405,11 +405,11 @@
     ],
     "sources": [
       {
-        "type": "topic_map",
-        "label": "Oopbuy question map",
+        "type": "reference",
+        "label": "Oopbuy Weidian link notes",
         "url": "content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md",
         "checkedAt": "2026-08-29",
-        "proves": "Question priority and product-link boundary."
+        "proves": "Why source-link answers should focus on URL context, item identifiers, photos, SKU, style, color, and size."
       }
     ],
     "relatedTopics": [
@@ -442,7 +442,7 @@
     "h1": "How should you check an Oopbuy Taobao link?",
     "status": "review",
     "primaryKeyword": "oopbuy taobao link",
-    "searchIntent": "The user wants Taobao source-link context.",
+    "searchIntent": "Help shoppers check Taobao product links before relying on spreadsheet notes.",
     "topic": "product-links",
     "priority": 8,
     "updatedAt": "2026-08-29",
@@ -484,12 +484,12 @@
     "h1": "How should you read Oopbuy reviews on Reddit?",
     "status": "review",
     "primaryKeyword": "oopbuy legit reviews reddit",
-    "searchIntent": "The user wants trust or review signals.",
+    "searchIntent": "Help shoppers separate Oopbuy review signals from facts that still need live-page checking.",
     "topic": "reviews",
     "priority": 9,
     "updatedAt": "2026-08-29",
     "quickAnswer": "Read Oopbuy Reddit reviews as user experience signals, not as proof of current fees, delivery time, product quality, refunds, or platform reliability. Look for repeated patterns, dates, country context, and whether replies disagree.",
-    "evidenceSummary": "Search demand includes Oopbuy review and Reddit phrases. Community posts can show concerns and language, but changing platform facts need current first-party sources.",
+    "evidenceSummary": "Search demand includes Oopbuy review and Reddit phrases. Community posts can show concerns and language, but changing platform details need current Oopbuy pages.",
     "steps": [
       "Check the date of each review.",
       "Separate one-off complaints from repeated patterns.",
@@ -526,7 +526,7 @@
     "h1": "How should you check Oopbuy shipping coupons?",
     "status": "review",
     "primaryKeyword": "oopbuy coupons shipping",
-    "searchIntent": "The user wants coupon or discount checks.",
+    "searchIntent": "Help shoppers check Oopbuy coupon and discount claims before relying on them.",
     "topic": "shipping",
     "priority": 10,
     "updatedAt": "2026-08-29",

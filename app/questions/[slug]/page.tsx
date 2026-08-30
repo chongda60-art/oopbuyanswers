@@ -72,7 +72,7 @@ export default async function QuestionPage({ params }: { params: Promise<{ slug:
       </header>
 
       <section className="answer-section">
-        <h2>Evidence summary</h2>
+        <h2>What this answer is based on</h2>
         <p>{question.evidenceSummary}</p>
       </section>
 
@@ -87,7 +87,7 @@ export default async function QuestionPage({ params }: { params: Promise<{ slug:
       </section>
 
       <section className="answer-section unknown-box">
-        <h2>Unknowns</h2>
+        <h2>What to check before relying on it</h2>
         <ul>{question.unknowns.map((unknown) => <li key={unknown}>{unknown}</li>)}</ul>
       </section>
 
@@ -108,11 +108,11 @@ export default async function QuestionPage({ params }: { params: Promise<{ slug:
       ) : null}
 
       <section className="answer-section source-block">
-        <h2>Sources</h2>
+        <h2>References</h2>
         <ul>
           {question.sources.map((source) => (
             <li key={`${source.label}-${source.checkedAt}`}>
-              <span>{source.label}</span> · <span>{source.type}</span> · <span>checked {source.checkedAt}</span>
+              <span>{source.label}</span>
               <p>{source.proves}</p>
             </li>
           ))}
