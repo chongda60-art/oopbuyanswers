@@ -12,12 +12,12 @@
     "priority": 1,
     "updatedAt": "2026-08-29",
     "quickAnswer": "Use QC photos as a product-check step, not as proof of shipping, item trust, delivery time, or platform service quality. This page keeps platform-specific facts marked Unknown until a current Oopbuy first-party source is verified.",
-    "evidenceSummary": "The source topic map records Google demand around Oopbuy QC photos and related QC finder searches. Reddit and video evidence still need item-level review before stronger platform claims are published.",
-    "steps": ["Start with the source product link and product photos.", "Compare visible SKU, style, color, size, and category before relying on any QC image.", "Check whether the page shows current first-party Oopbuy instructions before assuming where photos appear.", "Use CuriCart links only as research exits to product or category context."],
+    "evidenceSummary": "Search demand appears around Oopbuy QC photos and related QC finder searches. Community posts and videos can show what users ask, but current platform claims still need a first-party source.",
+    "steps": ["Start with the source product link and product photos.", "Compare visible SKU, style, color, size, and category before relying on any QC image.", "Check whether the page shows current first-party Oopbuy instructions before assuming where photos appear.", "Use related product categories to compare product or category context."],
     "mistakes": ["Treating a community screenshot as a current Oopbuy policy.", "Assuming a product photo and a QC photo prove the same thing.", "Clicking an unrelated product card just because it is available."],
     "unknowns": ["Exact current Oopbuy menu path for QC photos.", "Current QC photo count, timing, and any extra-photo fee.", "Whether any third-party QC finder has current platform-confirmed coverage."],
     "faq": [{"question": "Does this page prove Oopbuy QC timing?", "answer": "No. Timing is a platform fact and needs a current Oopbuy first-party source."}, {"question": "Are related product links local Oopbuy Answers product pages?", "answer": "No. They open the matching CuriCart product or category page."}],
-    "sources": [{"type": "strategy_map", "label": "OOPBUY_FIRST_10_TOPIC_MAP.md", "url": "content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md", "checkedAt": "2026-08-29", "proves": "Internal approved topic priority and unknown boundaries."}],
+    "sources": [{"type": "topic_map", "label": "Oopbuy question map", "url": "content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md", "checkedAt": "2026-08-29", "proves": "Question priority and unknown boundaries for this topic."}],
     "relatedTopics": ["qc", "sku-size", "product-links"],
     "relatedQuestions": ["oopbuy-qc-finder", "oopbuy-spreadsheet-with-qc", "oopbuy-shoe-size-chart"],
     "curicartBridge": [{"type": "categoryLink", "categoryName": "New products", "canonicalUrl": "https://www.curicart.com/en/Newproduct.html", "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-qc-photos", "matchReason": "Users checking QC photos usually need image-rich product context before continuing.", "status": "approved"}, {"type": "categoryLink", "categoryName": "Brands", "canonicalUrl": "https://www.curicart.com/en/Brand.html", "utmUrl": "https://www.curicart.com/en/Brand.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-qc-photos", "matchReason": "Brand and category context can help users compare product versions without using a local product detail copy.", "status": "approved"}]
@@ -40,7 +40,7 @@
     "mistakes": ["Using a QC image as proof of item trust.", "Ignoring missing SKU or size labels.", "Assuming a third-party finder is complete or platform-confirmed."],
     "unknowns": ["Current third-party QC finder coverage.", "Whether a finder has permission to show specific images.", "Current Oopbuy image access rules."],
     "faq": [{"question": "Can a QC finder replace source-link checking?", "answer": "No. It can support visual checks, but the source link and attributes still matter."}],
-    "sources": [{"type": "strategy_map", "label": "OOPBUY_FIRST_10_TOPIC_MAP.md", "url": "content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md", "checkedAt": "2026-08-29", "proves": "Internal topic priority and evidence boundary."}],
+    "sources": [{"type": "topic_map", "label": "Oopbuy question map", "url": "content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md", "checkedAt": "2026-08-29", "proves": "Question priority and evidence boundary."}],
     "relatedTopics": ["qc", "product-links"],
     "relatedQuestions": ["oopbuy-qc-photos", "oopbuy-spreadsheet-with-qc"],
     "curicartBridge": [{"type": "categoryLink", "categoryName": "New products", "canonicalUrl": "https://www.curicart.com/en/Newproduct.html", "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-qc-finder", "matchReason": "Image-rich product browsing is relevant to visual QC comparison tasks.", "status": "approved"}]
@@ -63,7 +63,7 @@
     "mistakes": ["Trusting a spreadsheet row with no image or source context.", "Treating reference price as final landed cost.", "Publishing near-duplicate spreadsheet pages for synonym keywords."],
     "unknowns": ["Whether a specific public Oopbuy spreadsheet is current.", "Whether any listed link is accepted by Oopbuy today.", "Current shipping, fee, and coupon facts."],
     "faq": [{"question": "Does a spreadsheet prove availability?", "answer": "No. Availability and platform support must be checked against current platform or source pages."}],
-    "sources": [{"type": "strategy_map", "label": "OOPBUY_FIRST_10_TOPIC_MAP.md", "url": "content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md", "checkedAt": "2026-08-29", "proves": "Internal topic priority and spreadsheet evidence boundary."}],
+    "sources": [{"type": "topic_map", "label": "Oopbuy question map", "url": "content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md", "checkedAt": "2026-08-29", "proves": "Question priority and spreadsheet evidence boundary."}],
     "relatedTopics": ["spreadsheet", "qc", "product-links"],
     "relatedQuestions": ["oopbuy-qc-photos", "oopbuy-weidian-link"],
     "curicartBridge": [{"type": "categoryLink", "categoryName": "New products", "canonicalUrl": "https://www.curicart.com/en/Newproduct.html", "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-spreadsheet-with-qc", "matchReason": "New product entries can support spreadsheet-style product discovery when rows need image and category context.", "status": "approved"}, {"type": "categoryLink", "categoryName": "Shopping agent guides", "canonicalUrl": "https://www.curicart.com/en/agents.html", "utmUrl": "https://www.curicart.com/en/agents.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-spreadsheet-with-qc", "matchReason": "Agent research context is relevant to Oopbuy spreadsheet search tasks.", "status": "approved"}]
@@ -132,7 +132,7 @@
     "mistakes": ["Shortening a full size label without evidence.", "Treating a generic chart as product-specific proof.", "Ignoring color or style variants that change SKU context."],
     "unknowns": ["Seller-specific fit accuracy.", "Return outcome.", "Current Oopbuy size assistant behavior."],
     "faq": [{"question": "Should a short size label be converted automatically?", "answer": "No. If the source does not provide the conversion, mark it Unknown or Not Sure."}],
-    "sources": [{"type": "strategy_map", "label": "OOPBUY_FIRST_10_TOPIC_MAP.md", "url": "content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md", "checkedAt": "2026-08-29", "proves": "Internal priority and size-label boundary."}],
+    "sources": [{"type": "topic_map", "label": "Oopbuy question map", "url": "content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md", "checkedAt": "2026-08-29", "proves": "Question priority and size-label boundary."}],
     "relatedTopics": ["sku-size", "qc", "product-links"],
     "relatedQuestions": ["oopbuy-qc-photos", "oopbuy-weidian-link"],
     "curicartBridge": [{"type": "categoryLink", "categoryName": "New products", "canonicalUrl": "https://www.curicart.com/en/Newproduct.html", "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-shoe-size-chart", "matchReason": "New product entries can show visible product context before size/SKU comparison.", "status": "approved"}]
@@ -155,7 +155,7 @@
     "mistakes": ["Assuming a source link is accepted by Oopbuy today.", "Ignoring missing SKU images.", "Replacing source-link checks with a generic product title."],
     "unknowns": ["Current Oopbuy import behavior for Weidian links.", "Whether a specific link is supported today.", "Current seller availability."],
     "faq": [{"question": "Does this page promise Oopbuy supports a link?", "answer": "No. Current platform support must be checked on Oopbuy or a first-party source."}],
-    "sources": [{"type": "strategy_map", "label": "OOPBUY_FIRST_10_TOPIC_MAP.md", "url": "content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md", "checkedAt": "2026-08-29", "proves": "Internal priority and product-link boundary."}],
+    "sources": [{"type": "topic_map", "label": "Oopbuy question map", "url": "content/oopbuy-first-10/OOPBUY_FIRST_10_TOPIC_MAP.md", "checkedAt": "2026-08-29", "proves": "Question priority and product-link boundary."}],
     "relatedTopics": ["product-links", "spreadsheet", "sku-size"],
     "relatedQuestions": ["oopbuy-taobao-link", "oopbuy-spreadsheet-with-qc", "oopbuy-shoe-size-chart"],
     "curicartBridge": [{"type": "categoryLink", "categoryName": "Shopping agent guides", "canonicalUrl": "https://www.curicart.com/en/agents.html", "utmUrl": "https://www.curicart.com/en/agents.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-weidian-link", "matchReason": "Agent research context is relevant when users compare source links and platform workflows.", "status": "approved"}]

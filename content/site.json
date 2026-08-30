@@ -12,6 +12,6 @@
   "footerDisclosure": "Research pages separate community questions, search demand, first-party sources, public demonstrations, and CuriCart product data.",
   "aboutTitle": "About Oopbuy Answers",
   "aboutBody": "Oopbuy Answers is a focused research site for Oopbuy-related user questions. It does not represent Oopbuy and does not claim a business relationship with the platform.",
-  "topicsEmptyBody": "QC, product links, spreadsheet, shipping, and SKU or size topics remain unpublished until their first answer passes review.",
-  "unknownsBody": "No Oopbuy question is approved for publication yet. Current first-party QC facts and the CuriCart read-only API contract are still pending review."
+  "topicsEmptyBody": "QC, product links, spreadsheet, shipping, and SKU or size topics appear here when there is a useful answer to read.",
+  "unknownsBody": "Some Oopbuy details can change. Current first-party QC facts and product data connections may still need a fresh check."
 }

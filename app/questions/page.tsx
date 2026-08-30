@@ -27,7 +27,7 @@ export default function QuestionsPage({ searchParams }: { searchParams: Promise<
       </form>
       {publicQuestions.length === 0 ? (
         <section className="empty-state compact">
-          <h2>No approved answers match this search.</h2>
+          <h2>No answers match this search.</h2>
           <p>Search is not recorded. No submission is created.</p>
         </section>
       ) : (
