@@ -214,6 +214,69 @@
   color: var(--muted);
 }
 
+.latest-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.latest-guide-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--surface);
+  display: grid;
+  gap: 12px;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+.latest-guide-card:hover {
+  transform: translateY(-2px);
+  border-color: #c3cad7;
+  box-shadow: 0 14px 34px rgba(18, 32, 57, .08);
+}
+
+.latest-guide-card div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.guide-topic,
+.guide-time {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.guide-topic {
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #eef2f8;
+  color: var(--ink);
+  text-transform: capitalize;
+}
+
+.latest-guide-card h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  line-height: 1.18;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.latest-guide-card h3 a {
+  text-decoration: none;
+}
+
+.latest-guide-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .related-product-research {
   margin-top: 32px;
   padding: 24px;
@@ -341,6 +404,10 @@
   }
 
   .how-use-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .latest-guide-grid {
     grid-template-columns: 1fr;
   }
 

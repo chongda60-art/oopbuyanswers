@@ -92,12 +92,17 @@ export default function Home() {
         <div className="section-heading">
           <h2 id="recent-questions">Latest Oopbuy Questions</h2>
         </div>
-        <div className="source-list compact-list">
+        <div className="latest-guide-grid">
           {publicQuestions.slice(0, 5).map((question) => (
-            <section key={question.id}>
-              <h2><Link href={`/questions/${question.slug}`}>{question.title}</Link></h2>
-              <p>{question.searchIntent}</p>
-            </section>
+            <article className="latest-guide-card" key={question.id}>
+              <div>
+                <span className="guide-topic">{question.topic}</span>
+                <span className="guide-time">4 min read</span>
+              </div>
+              <h3><Link href={`/questions/${question.slug}`}>{question.title}</Link></h3>
+              <p>{question.summary}</p>
+              <Link className="text-cta" href={`/questions/${question.slug}`}>Read answer</Link>
+            </article>
           ))}
         </div>
       </section>

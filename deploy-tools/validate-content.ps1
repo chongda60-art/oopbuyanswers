@@ -7,11 +7,11 @@ if (-not (Test-Path -LiteralPath $questionsPath)) { throw "Missing content sourc
 
 $questions = Get-Content -LiteralPath $questionsPath -Raw | ConvertFrom-Json
 $homeCategories = if (Test-Path -LiteralPath $homeCategoriesPath) { Get-Content -LiteralPath $homeCategoriesPath -Raw | ConvertFrom-Json } else { @() }
-$allowedPublicStatuses = @('approved','published')
+$hiddenQuestionStatuses = @('archived','hold')
 $allowedBridgeStatuses = @('approved','current')
 $requiredProductFields = @('productName','imageUrl','curicartCategory','styleOrSku','sourceType','canonicalUrl','utmUrl','matchReason','verifiedAt','status')
 $requiredCategoryFields = @('categoryName','canonicalUrl','utmUrl','matchReason')
-$requiredQuestionFields = @('targetKeyword','slug','title','h1','quickAnswer','evidenceSummary','steps','mistakes','unknowns','faq','sources','relatedTopics','relatedQuestions','curicartBridge')
+$requiredQuestionFields = @('targetKeyword','slug','title','h1','summary','quickAnswer','evidenceSummary','steps','mistakes','unknowns','faq','sources','relatedTopics','relatedQuestions','curicartBridge')
 $publicQuestions = @()
 $errors = New-Object System.Collections.Generic.List[string]
 
@@ -49,10 +49,13 @@ foreach ($question in $questions) {
     Add-ValidationError "$($question.slug): local product route is not allowed"
   }
 
-  if ($allowedPublicStatuses -contains $question.status) {
+  if ($hiddenQuestionStatuses -notcontains $question.status) {
     $publicQuestions += $question
-    foreach ($field in @('targetKeyword','slug','title','h1','quickAnswer','evidenceSummary')) {
+    foreach ($field in @('targetKeyword','slug','title','h1','summary','quickAnswer','evidenceSummary')) {
       if (-not (Test-Text $question.$field)) { Add-ValidationError "$($question.slug): public question has empty $field" }
+    }
+    foreach ($visibleField in @('summary','quickAnswer','evidenceSummary')) {
+      if ($question.$visibleField -match 'The user wants') { Add-ValidationError "$($question.slug): $visibleField contains internal research wording" }
     }
   }
 

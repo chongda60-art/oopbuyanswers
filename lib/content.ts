@@ -49,6 +49,7 @@ export type QuestionRecord = {
   targetKeyword: string;
   title: string;
   h1: string;
+  summary: string;
   status: QuestionStatus;
   primaryKeyword: string;
   searchIntent: string;
