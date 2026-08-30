@@ -16,7 +16,7 @@
     "steps": [
       "Start with the source product link and product photos.",
       "Compare visible SKU, style, color, size, and category before relying on any QC image.",
-      "Check whether the page shows current first-party Oopbuy instructions before assuming where photos appear.",
+      "Check the current Oopbuy page instructions before assuming where photos appear.",
       "Use related product categories to compare product or category context."
     ],
     "mistakes": [
@@ -27,7 +27,7 @@
     "unknowns": [
       "Exact current Oopbuy menu path for QC photos.",
       "Current QC photo count, timing, and any extra-photo fee.",
-      "Whether any third-party QC finder has current platform-confirmed coverage."
+      "Whether any third-party QC finder has current coverage for the item you are checking."
     ],
     "faq": [
       {
