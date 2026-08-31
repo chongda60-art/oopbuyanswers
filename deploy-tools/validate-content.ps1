@@ -23,8 +23,17 @@ function Test-Text([object]$Value) {
   return ($null -ne $Value -and "$Value".Trim().Length -gt 0)
 }
 
-function Test-CuricartUtm([string]$Url, [string]$Slug) {
+function ConvertTo-UtmSlug([string]$Value) {
+  $slug = $Value.Trim().ToLowerInvariant()
+  $slug = $slug -replace '&', ' and '
+  $slug = $slug -replace '[^a-z0-9]+', '_'
+  $slug = $slug -replace '^_+|_+$', ''
+  return $slug
+}
+
+function Test-CuricartUtm([string]$Url, [string]$ExpectedContent) {
   try {
+    if ($Url -match '\\$') { return 'URL must not end with a backslash' }
     $uri = [Uri]$Url
     if ($uri.Host -ne 'www.curicart.com') { return "host must be www.curicart.com" }
     $query = [System.Web.HttpUtility]::ParseQueryString($uri.Query)
@@ -33,7 +42,7 @@ function Test-CuricartUtm([string]$Url, [string]$Slug) {
     if ($query.Get('utm_campaign') -ne 'oopbuy_questions') { return 'missing utm_campaign=oopbuy_questions' }
     $content = $query.Get('utm_content')
     if (-not $content) { return 'missing utm_content' }
-    if ($Slug -and $content -ne $Slug) { return "utm_content must equal $Slug" }
+    if ($ExpectedContent -and $content -ne $ExpectedContent) { return "utm_content must equal $ExpectedContent" }
     return $null
   } catch {
     return "invalid URL: $Url"
@@ -83,7 +92,8 @@ foreach ($question in $questions) {
         Add-ValidationError "$($question.slug): unknown bridge type $($item.type)"
       }
 
-      $utmError = Test-CuricartUtm -Url $item.utmUrl -Slug $question.slug
+      $itemSlug = if ($item.type -eq 'productPreview') { ConvertTo-UtmSlug "$($item.productName)" } else { ConvertTo-UtmSlug "$($item.categoryName)" }
+      $utmError = Test-CuricartUtm -Url $item.utmUrl -ExpectedContent "question_related_$itemSlug"
       if ($utmError) { Add-ValidationError "$($question.slug): $utmError" }
     }
   }
@@ -93,7 +103,7 @@ foreach ($category in @($homeCategories)) {
   foreach ($field in @('slug','name','canonicalUrl','utmUrl','visual')) {
     if (-not (Test-Text $category.$field)) { Add-ValidationError "home category missing $field" }
   }
-  $utmError = Test-CuricartUtm -Url $category.utmUrl -Slug "home-category-$($category.slug)"
+  $utmError = Test-CuricartUtm -Url $category.utmUrl -ExpectedContent "home_category_$(ConvertTo-UtmSlug "$($category.slug)")"
   if ($utmError) { Add-ValidationError "home category $($category.slug): $utmError" }
 }
 

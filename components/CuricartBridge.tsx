@@ -1,10 +1,11 @@
 import Image from "next/image";
 import type { CuricartBridgeItem } from "@/lib/content";
-import { isRenderableBridgeItem, withUtm } from "@/lib/curicart-bridge";
+import { isRenderableBridgeItem, slugifyForUtm, withUtm } from "@/lib/curicart-bridge";
 
 type Props = {
   items: CuricartBridgeItem[];
   contentSlug: string;
+  context?: "question" | "topic";
   title?: string;
 };
 
@@ -14,7 +15,7 @@ const productItems = (items: CuricartBridgeItem[]) =>
 const categoryItems = (items: CuricartBridgeItem[]) =>
   items.filter((item) => item.type === "categoryLink" && isRenderableBridgeItem(item));
 
-export function CuricartBridge({ items, contentSlug, title = "Related product research" }: Props) {
+export function CuricartBridge({ items, contentSlug, context = "question", title = "Related product research" }: Props) {
   const products = productItems(items);
   const categories = categoryItems(items);
 
@@ -32,9 +33,11 @@ export function CuricartBridge({ items, contentSlug, title = "Related product re
           {products.map((item, index) => {
             if (item.type !== "productPreview") return null;
             const label = `${item.productName} ${item.styleOrSku}`.trim();
-            const href = contentSlug === "home" ? item.utmUrl : withUtm(item.canonicalUrl, contentSlug);
+            const itemSlug = slugifyForUtm(item.productName || item.styleOrSku);
+            const utmContent = context === "topic" ? `topic_${contentSlug}_${itemSlug}` : `question_related_${itemSlug}`;
+            const href = withUtm(item.canonicalUrl, utmContent);
             return (
-              <a className="research-card product-card" href={href} key={`${item.canonicalUrl}-${item.styleOrSku}`}>
+              <a className="research-card product-card" href={href} key={`${contentSlug}-product-${itemSlug}-${index}`}>
                 <span className="research-card-image">
                   <Image
                     src={item.imageUrl}
@@ -57,11 +60,13 @@ export function CuricartBridge({ items, contentSlug, title = "Related product re
 
       {categories.length > 0 ? (
         <div className="related-product-grid category-grid" data-card-kind="categoryLink">
-          {categories.map((item) => {
+          {categories.map((item, index) => {
             if (item.type !== "categoryLink") return null;
-            const href = contentSlug === "home" ? item.utmUrl : withUtm(item.canonicalUrl, contentSlug);
+            const itemSlug = slugifyForUtm(item.categoryName);
+            const utmContent = context === "topic" ? `topic_${contentSlug}_${itemSlug}` : `question_related_${itemSlug}`;
+            const href = withUtm(item.canonicalUrl, utmContent);
             return (
-              <a className="research-card category-card" href={href} key={item.canonicalUrl}>
+              <a className="research-card category-card" href={href} key={`${contentSlug}-category-${itemSlug}-${index}`}>
                 <span className="research-card-meta">Category</span>
                 <span className="research-card-title">{item.categoryName}</span>
                 <span className="research-card-reason">{item.matchReason}</span>

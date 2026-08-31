@@ -39,7 +39,7 @@ export default async function TopicPage({ params }: { params: Promise<{ topic: s
       <section className="question-grid">
         {questions.map((question) => <QuestionCard question={question} key={question.id} />)}
       </section>
-      <CuricartBridge items={bridgeItems} contentSlug={topic} />
+      <CuricartBridge items={bridgeItems} contentSlug={topic} context="topic" />
     </main>
   );
 }

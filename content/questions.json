@@ -63,7 +63,7 @@
         "type": "categoryLink",
         "categoryName": "New products",
         "canonicalUrl": "https://www.curicart.com/en/Newproduct.html",
-        "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-qc-photos",
+        "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_new_products",
         "matchReason": "Browse recent product examples with photos, SKU or size details, and source-page context.",
         "status": "approved"
       },
@@ -71,7 +71,7 @@
         "type": "categoryLink",
         "categoryName": "Brands",
         "canonicalUrl": "https://www.curicart.com/en/Brand.html",
-        "utmUrl": "https://www.curicart.com/en/Brand.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-qc-photos",
+        "utmUrl": "https://www.curicart.com/en/Brand.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_brands",
         "matchReason": "Compare product examples by brand, category, photos, and visible option details.",
         "status": "approved"
       }
@@ -136,7 +136,7 @@
         "type": "categoryLink",
         "categoryName": "New products",
         "canonicalUrl": "https://www.curicart.com/en/Newproduct.html",
-        "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-qc-finder",
+        "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_new_products",
         "matchReason": "Image-rich product browsing is relevant to visual QC comparison tasks.",
         "status": "approved"
       }
@@ -202,7 +202,7 @@
         "type": "categoryLink",
         "categoryName": "New products",
         "canonicalUrl": "https://www.curicart.com/en/Newproduct.html",
-        "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-spreadsheet-with-qc",
+        "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_new_products",
         "matchReason": "New product entries can support spreadsheet-style product discovery when rows need image and category context.",
         "status": "approved"
       },
@@ -210,7 +210,7 @@
         "type": "categoryLink",
         "categoryName": "Shopping agent guides",
         "canonicalUrl": "https://www.curicart.com/en/agents.html",
-        "utmUrl": "https://www.curicart.com/en/agents.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-spreadsheet-with-qc",
+        "utmUrl": "https://www.curicart.com/en/agents.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_shopping_agent_guides",
         "matchReason": "Agent research context is relevant to Oopbuy spreadsheet search tasks.",
         "status": "approved"
       }
@@ -360,7 +360,7 @@
         "type": "categoryLink",
         "categoryName": "New products",
         "canonicalUrl": "https://www.curicart.com/en/Newproduct.html",
-        "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-shoe-size-chart",
+        "utmUrl": "https://www.curicart.com/en/Newproduct.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_new_products",
         "matchReason": "New product entries can show visible product context before size/SKU comparison.",
         "status": "approved"
       }
@@ -427,7 +427,7 @@
         "type": "categoryLink",
         "categoryName": "Shopping agent guides",
         "canonicalUrl": "https://www.curicart.com/en/agents.html",
-        "utmUrl": "https://www.curicart.com/en/agents.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=oopbuy-weidian-link",
+        "utmUrl": "https://www.curicart.com/en/agents.html?utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_shopping_agent_guides",
         "matchReason": "Agent research context is relevant when users compare source links and platform workflows.",
         "status": "approved"
       }

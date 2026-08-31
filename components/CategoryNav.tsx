@@ -1,4 +1,5 @@
 import categories from "@/content/home-categories.json";
+import { withUtm } from "@/lib/curicart-bridge";
 
 type HomeCategory = {
   slug: string;
@@ -31,7 +32,7 @@ export function CategoryNav() {
       </div>
       <div className="category-nav-grid">
         {homeCategories.map((category) => (
-          <a className="category-nav-card" href={category.utmUrl} key={category.slug}>
+          <a className="category-nav-card" href={withUtm(category.canonicalUrl, `home_category_${category.slug}`)} key={category.slug}>
             <span className="category-art">
               <CategoryGlyph visual={category.visual} />
             </span>
