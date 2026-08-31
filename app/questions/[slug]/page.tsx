@@ -107,18 +107,6 @@ export default async function QuestionPage({ params }: { params: Promise<{ slug:
         </section>
       ) : null}
 
-      <section className="answer-section source-block">
-        <h2>References</h2>
-        <ul>
-          {question.sources.map((source) => (
-            <li key={`${source.label}-${source.checkedAt}`}>
-              <span>{source.label}</span>
-              <p>{source.proves}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
       {related.length ? (
         <section className="answer-section">
           <h2>Related questions</h2>
