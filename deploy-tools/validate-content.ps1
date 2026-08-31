@@ -9,6 +9,9 @@ $questions = Get-Content -LiteralPath $questionsPath -Raw | ConvertFrom-Json
 $homeCategories = if (Test-Path -LiteralPath $homeCategoriesPath) { Get-Content -LiteralPath $homeCategoriesPath -Raw | ConvertFrom-Json } else { @() }
 $hiddenQuestionStatuses = @('archived','hold')
 $allowedBridgeStatuses = @('approved','current')
+$allowedCuricartCategories = @('Shoe','Accessories','Electronics','Clothing','Bags')
+$expectedHomeCategoryOrder = @('Shoe','Accessories','Electronics','Clothing','Bags')
+$forbiddenPublicCategoryLabels = @('T-Shirts','Hoodies','Jackets','Pants/Shorts','Headwear','Sets','All Product')
 $requiredProductFields = @('productName','imageUrl','curicartCategory','styleOrSku','sourceType','canonicalUrl','utmUrl','matchReason','verifiedAt','status')
 $requiredCategoryFields = @('categoryName','canonicalUrl','utmUrl','matchReason')
 $requiredQuestionFields = @('targetKeyword','slug','title','h1','summary','quickAnswer','evidenceSummary','steps','mistakes','unknowns','faq','sources','relatedTopics','relatedQuestions','curicartBridge')
@@ -46,6 +49,15 @@ function Test-CuricartUtm([string]$Url, [string]$ExpectedContent) {
     return $null
   } catch {
     return "invalid URL: $Url"
+  }
+}
+
+function Test-AllowedCuricartCategory([string]$Name, [string]$Context) {
+  if ($allowedCuricartCategories -notcontains $Name) {
+    Add-ValidationError "${Context}: category must be one of $($allowedCuricartCategories -join ', ')"
+  }
+  if ($forbiddenPublicCategoryLabels -contains $Name) {
+    Add-ValidationError "${Context}: forbidden non-main category label $Name"
   }
 }
 
@@ -88,6 +100,7 @@ foreach ($question in $questions) {
         foreach ($field in $requiredCategoryFields) {
           if (-not (Test-Text $item.$field)) { Add-ValidationError "$($question.slug): renderable categoryLink missing $field" }
         }
+        Test-AllowedCuricartCategory -Name "$($item.categoryName)" -Context "$($question.slug)"
       } else {
         Add-ValidationError "$($question.slug): unknown bridge type $($item.type)"
       }
@@ -103,8 +116,21 @@ foreach ($category in @($homeCategories)) {
   foreach ($field in @('slug','name','canonicalUrl','utmUrl','visual')) {
     if (-not (Test-Text $category.$field)) { Add-ValidationError "home category missing $field" }
   }
+  Test-AllowedCuricartCategory -Name "$($category.name)" -Context "home category $($category.slug)"
   $utmError = Test-CuricartUtm -Url $category.utmUrl -ExpectedContent "home_category_$(ConvertTo-UtmSlug "$($category.slug)")"
   if ($utmError) { Add-ValidationError "home category $($category.slug): $utmError" }
+}
+
+$actualHomeCategoryOrder = @($homeCategories | ForEach-Object { "$($_.name)" })
+if ($actualHomeCategoryOrder.Count -ne $expectedHomeCategoryOrder.Count) {
+  Add-ValidationError "home categories must contain exactly $($expectedHomeCategoryOrder.Count) main categories"
+} else {
+  for ($i = 0; $i -lt $expectedHomeCategoryOrder.Count; $i++) {
+    if ($actualHomeCategoryOrder[$i] -ne $expectedHomeCategoryOrder[$i]) {
+      Add-ValidationError "home category order must be $($expectedHomeCategoryOrder -join ', ')"
+      break
+    }
+  }
 }
 
 if ($errors.Count -gt 0) {

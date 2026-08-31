@@ -11,12 +11,16 @@ $badLinks = New-Object System.Collections.Generic.List[string]
 
 foreach ($path in $Paths) {
   $html = Get-CurlText -Url "$($config.ProductionUrl)$path"
-  $matches = [regex]::Matches($html, 'https://www\.curicart\.com[^"''<>\s]+')
+  $matches = [regex]::Matches($html, '<a\b[^>]*\bhref=["''](https://www\.curicart\.com[^"'']+)["'']', 'IgnoreCase')
   $pageBad = 0
   foreach ($match in $matches) {
-    $raw = $match.Value
+    $raw = $match.Groups[1].Value
     $href = [System.Net.WebUtility]::HtmlDecode($raw)
-    $href = $href -replace '\\$', ''
+    if ($href -match '\\$') {
+      $pageBad += 1
+      $badLinks.Add("$path`t$raw`ttrailing_backslash") | Out-Null
+      continue
+    }
     $hasRequiredUtm =
       $href -match [regex]::Escape('utm_source=oopbuyanswers') -and
       $href -match [regex]::Escape('utm_medium=referral') -and
