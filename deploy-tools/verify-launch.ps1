@@ -20,16 +20,16 @@ function Get-Canonical([string]$Html) {
 }
 
 function Test-CuricartLinks([string]$Html) {
-  $matches = [regex]::Matches($Html, 'https://www\.curicart\.com[^"''<>\s]+')
+  $matches = [regex]::Matches($Html, '<a[^>]+href=["''](https://www\.curicart\.com[^"'']+)["'']')
   $bad = New-Object System.Collections.Generic.List[string]
   foreach ($match in $matches) {
-    $href = [System.Net.WebUtility]::HtmlDecode($match.Value)
+    $href = [System.Net.WebUtility]::HtmlDecode($match.Groups[1].Value)
     if ($href -match '\\$' -or
         $href -notmatch [regex]::Escape('utm_source=oopbuyanswers') -or
         $href -notmatch [regex]::Escape('utm_medium=referral') -or
         $href -notmatch [regex]::Escape('utm_campaign=oopbuy_questions') -or
         $href -notmatch 'utm_content=[a-z0-9_]+') {
-      $bad.Add($match.Value) | Out-Null
+      $bad.Add($href) | Out-Null
     }
   }
   return [ordered]@{ total = $matches.Count; bad = $bad.Count; bad_links = @($bad) }
