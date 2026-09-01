@@ -1,4 +1,4 @@
-const { test } = require("@playwright/test");
+import { test } from "@playwright/test";
 
 const baseUrl = process.env.OOPBUY_PRODUCTION_URL || "https://oopbuyanswers.com";
 const paths = (process.env.OOPBUY_ASSERT_PATHS || "/,/questions,/questions/oopbuy-qc-photos,/topics/qc,/sources")
