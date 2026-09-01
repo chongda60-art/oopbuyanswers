@@ -43,6 +43,14 @@ function cleanInline(value) {
     .trim();
 }
 
+function cleanPublicHeading(value) {
+  const heading = cleanInline(value);
+  if (heading === "Step 7: Make Unknowns Visible") {
+    return "Step 7: Mark Missing Details Clearly";
+  }
+  return heading;
+}
+
 function splitSections(markdown) {
   const lines = markdown.replace(/\r\n/g, "\n").split("\n");
   const sections = [];
@@ -56,7 +64,7 @@ function splitSections(markdown) {
     const h2 = line.match(/^##\s+(.+)$/);
     const h3 = line.match(/^###\s+(.+)$/);
     if (h2 || h3) {
-      current = { heading: cleanInline((h2 || h3)[1]), lines: [] };
+      current = { heading: cleanPublicHeading((h2 || h3)[1]), lines: [] };
       sections.push(current);
       continue;
     }
