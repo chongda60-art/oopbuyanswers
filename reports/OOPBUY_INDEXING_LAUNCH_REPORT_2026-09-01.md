@@ -7,16 +7,22 @@ Date: 2026-09-01
 - Production URL: https://oopbuyanswers.com
 - Sitemap: https://oopbuyanswers.com/sitemap.xml
 - GitHub repository: https://github.com/chongda60-art/oopbuyanswers
-- Final Vercel deployment ID: dpl_Ac9MVqdJAwDM6DF7NqEoscPPJKet
-- Final Vercel deployment URL: https://oopbuyanswers-q85cl8lx9-chen-d2eb.vercel.app
-- Final commit after launch tooling fix: b68f554
+- Final Vercel deployment ID: dpl_277YQtgn6ChZ5ZufBh4QUwpYmSAq
+- Final Vercel deployment URL: https://oopbuyanswers-o99vuaym7-chen-d2eb.vercel.app
+- Final indexing-quality fix commit: 181ba1c
 
 ## Indexing state verified
 
 - robots.txt: HTTP 200 and allows `/`
 - sitemap.xml: HTTP 200 and non-empty
-- sitemap URL count: 16
+- sitemap URL count: 12
 - sitemap URLs: HTTP 200, self-canonical, and `index, follow`
+- Only the completed long-form question page is indexable: `https://oopbuyanswers.com/questions/oopbuy-qc-photos`
+- Thin question pages are removed from sitemap and return `noindex, follow` until their long-form articles are completed:
+  - `https://oopbuyanswers.com/questions/oopbuy-qc-finder`
+  - `https://oopbuyanswers.com/questions/oopbuy-spreadsheet-with-qc`
+  - `https://oopbuyanswers.com/questions/oopbuy-shoe-size-chart`
+  - `https://oopbuyanswers.com/questions/oopbuy-weidian-link`
 - www host: 308 permanent redirect to https://oopbuyanswers.com/
 - CuriCart links checked on `/`, `/questions`, `/questions/oopbuy-qc-photos`, `/topics/qc`, `/sources`: 13 links, bad UTM links 0
 
@@ -39,7 +45,7 @@ Submission report: `reports/search-discovery-submissions-20260901-212418.json`
 
 ## Validation artifacts
 
-- Launch verification report: `reports/launch-verification-20260901-213047.json`
+- Launch verification report: `reports/launch-verification-20260901-214547.json`
 - Screenshot refresh:
   - `reports/screenshots/oopbuyanswers-production-desktop.png`
   - `reports/screenshots/oopbuyanswers-production-mobile.png`
