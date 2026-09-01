@@ -54,12 +54,14 @@ Every `run-all.ps1` run writes a transcript to `reports/deploy-run-*.log`.
 - `deploy.ps1`: dry-run by default; with `-Execute` pushes to GitHub; with `-Vercel` also deploys production through Vercel CLI.
 - `dns-plan.ps1`: prints required DNS records and observed public DNS; with `-VerifyWithVercel` runs Vercel domain verification.
 - `verify.ps1`: checks production status, www redirect, noindex meta, robots, empty sitemap, required 200 pages, required 404 pages, and forbidden draft/fixture text.
+- `verify-launch.ps1`: checks the approved indexing launch state: robots allow, non-empty sitemap, sitemap URLs 200, self-canonical, index/follow, no forbidden public text, complete CuriCart UTM links, and www redirect to apex.
+- `submit-indexnow.ps1`: submits the approved launch URLs to verified IndexNow-compatible endpoints and writes one JSON receipt report under `reports/`. Use `-Execute` only after production launch verification passes.
 - `screenshots.ps1`: captures production desktop/mobile screenshots for home and Questions.
 - `run-all.ps1`: orchestrates the full flow and logs the run.
 
 ## Indexing launch gate
 
-Keep `NEXT_PUBLIC_LAUNCH_INDEXING=false` until the first professional question page, official facts, content review, fact review, SEO review, and indexing launch are separately approved. Do not submit Search Console, Bing, IndexNow, or a sitemap before that approval.
+Keep `NEXT_PUBLIC_LAUNCH_INDEXING=false` until the first professional question page, official facts, content review, fact review, SEO review, and indexing launch are separately approved. After approval, set the launch switch to true, run `preflight.ps1 -AllowLaunchIndexing`, deploy production, run `verify-launch.ps1`, then run `submit-indexnow.ps1 -Execute` once for the launch batch.
 
 ## Reusable Buy-site content loop
 

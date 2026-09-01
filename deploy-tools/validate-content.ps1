@@ -7,7 +7,7 @@ if (-not (Test-Path -LiteralPath $questionsPath)) { throw "Missing content sourc
 
 $questions = Get-Content -LiteralPath $questionsPath -Raw | ConvertFrom-Json
 $homeCategories = if (Test-Path -LiteralPath $homeCategoriesPath) { Get-Content -LiteralPath $homeCategoriesPath -Raw | ConvertFrom-Json } else { @() }
-$hiddenQuestionStatuses = @('archived','hold')
+$publicQuestionStatuses = @('approved','published')
 $allowedBridgeStatuses = @('approved','current')
 $allowedCuricartCategories = @('Shoe','Accessories','Electronics','Clothing','Bags')
 $expectedHomeCategoryOrder = @('Shoe','Accessories','Electronics','Clothing','Bags')
@@ -75,7 +75,7 @@ foreach ($question in $questions) {
     Add-ValidationError "$($question.slug): local product route is not allowed"
   }
 
-  if ($hiddenQuestionStatuses -notcontains $question.status) {
+  if ($publicQuestionStatuses -contains $question.status) {
     $publicQuestions += $question
     foreach ($field in @('targetKeyword','slug','title','h1','summary','quickAnswer','evidenceSummary')) {
       if (-not (Test-Text $question.$field)) { Add-ValidationError "$($question.slug): public question has empty $field" }

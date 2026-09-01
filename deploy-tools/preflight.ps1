@@ -1,4 +1,7 @@
-param([string]$ConfigPath = "$PSScriptRoot\config.psd1")
+param(
+  [string]$ConfigPath = "$PSScriptRoot\config.psd1",
+  [switch]$AllowLaunchIndexing
+)
 $ErrorActionPreference = 'Stop'
 . "$PSScriptRoot\common.ps1"
 $config = Get-OopbuyDeployConfig -ConfigPath $ConfigPath
@@ -18,7 +21,9 @@ try {
 }
 $secretHits = rg -n --hidden -g '!node_modules/**' -g '!.next/**' -g '!.git/**' '(ghp_[A-Za-z0-9]{20,}|vercel_[A-Za-z0-9_-]{20,}|BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|password\s*=)' $root
 if ($LASTEXITCODE -eq 0) { throw "Potential secret detected. Inspect before deploy.`n$secretHits" }
-if ([bool]$config.LaunchIndexing) { throw 'LaunchIndexing must remain false until content and indexing approval.' }
+if ([bool]$config.LaunchIndexing -and -not $AllowLaunchIndexing) {
+  throw 'LaunchIndexing is enabled. Re-run with -AllowLaunchIndexing only after content, fact, SEO, and indexing approval.'
+}
 & "$PSScriptRoot\validate-content.ps1" -ProjectRoot $root
 Write-Output 'PREFLIGHT_OK'
 Write-Output "ProjectRoot=$root"

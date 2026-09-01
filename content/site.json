@@ -2,6 +2,7 @@
   "brand": "Oopbuy Answers",
   "targetAgent": "Oopbuy",
   "domain": "oopbuyanswers.com",
+  "launchIndexing": true,
   "description": "Short, practical answers for common Oopbuy research questions about QC photos, product links, spreadsheets, sizes, source pages, and product examples.",
   "homeTitle": "Oopbuy Answers for QC Photos, Product Links, Spreadsheets and Size Questions",
   "homeSubtitle": "Short, practical answers for common Oopbuy research questions before checking product links, QC photos, spreadsheets, sizes, and source pages.",
