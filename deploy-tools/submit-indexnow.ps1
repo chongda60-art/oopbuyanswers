@@ -1,5 +1,6 @@
 param(
   [string]$ConfigPath = "$PSScriptRoot\config.psd1",
+  [string[]]$UrlPath,
   [switch]$Execute
 )
 $ErrorActionPreference = 'Stop'
@@ -13,10 +14,14 @@ $reportPath = Join-Path $reportDir "search-discovery-submissions-$stamp.json"
 $hostName = ([Uri]$config.ProductionUrl).Host
 $key = '5fe764c20de640c08126a04385fa4761'
 $keyLocation = "$($config.ProductionUrl)/$key.txt"
-$urls = @(
-  "$($config.ProductionUrl)/",
-  "$($config.ProductionUrl)/questions/oopbuy-qc-photos"
-)
+$urls = if ($UrlPath -and $UrlPath.Count -gt 0) {
+  @($UrlPath | ForEach-Object { [Uri]::new([Uri]"$($config.ProductionUrl)/", $_).ToString() })
+} else {
+  @(
+    "$($config.ProductionUrl)/",
+    "$($config.ProductionUrl)/questions/oopbuy-qc-photos"
+  )
+}
 
 $endpoints = @(
   @{ name = 'Generic IndexNow'; api = 'https://api.indexnow.org/indexnow'; source = 'https://www.indexnow.org/documentation' },

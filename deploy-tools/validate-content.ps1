@@ -5,8 +5,8 @@ $questionsPath = Join-Path $ProjectRoot 'content\questions.json'
 $homeCategoriesPath = Join-Path $ProjectRoot 'content\home-categories.json'
 if (-not (Test-Path -LiteralPath $questionsPath)) { throw "Missing content source: $questionsPath" }
 
-$questions = Get-Content -LiteralPath $questionsPath -Raw | ConvertFrom-Json
-$homeCategories = if (Test-Path -LiteralPath $homeCategoriesPath) { Get-Content -LiteralPath $homeCategoriesPath -Raw | ConvertFrom-Json } else { @() }
+$questions = Get-Content -LiteralPath $questionsPath -Raw -Encoding UTF8 | ConvertFrom-Json
+$homeCategories = if (Test-Path -LiteralPath $homeCategoriesPath) { Get-Content -LiteralPath $homeCategoriesPath -Raw -Encoding UTF8 | ConvertFrom-Json } else { @() }
 $publicQuestionStatuses = @('approved','published')
 $allowedBridgeStatuses = @('approved','current')
 $allowedCuricartCategories = @('Shoe','Accessories','Electronics','Clothing','Bags')
