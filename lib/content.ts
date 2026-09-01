@@ -59,6 +59,7 @@ export type QuestionRecord = {
   metaDescription?: string;
   summary: string;
   status: QuestionStatus;
+  indexable?: boolean;
   primaryKeyword: string;
   searchIntent: string;
   topic: string;
@@ -82,6 +83,10 @@ export const contentConfig = siteContent;
 export const allQuestions = questions as QuestionRecord[];
 
 export const publicQuestions = allQuestions.filter((question) => question.status === "approved" || question.status === "published");
+
+export const indexableQuestions = publicQuestions.filter((question) => question.indexable === true);
+
+export const isIndexableQuestion = (question: QuestionRecord) => question.indexable === true;
 
 export const getPublicQuestion = (slug: string) => publicQuestions.find((question) => question.slug === slug);
 

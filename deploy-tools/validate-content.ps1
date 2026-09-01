@@ -85,6 +85,27 @@ foreach ($question in $questions) {
     }
   }
 
+  if ($question.indexable -eq $true) {
+    if ($publicQuestionStatuses -notcontains $question.status) {
+      Add-ValidationError "$($question.slug): indexable question must be approved or published"
+    }
+    $indexableWordParts = @($question.title, $question.h1, $question.quickAnswer)
+    foreach ($section in @($question.bodySections)) {
+      $indexableWordParts += $section.heading
+      $indexableWordParts += @($section.paragraphs)
+      $indexableWordParts += @($section.ordered)
+      $indexableWordParts += @($section.bullets)
+    }
+    foreach ($faqItem in @($question.faq)) {
+      $indexableWordParts += $faqItem.question
+      $indexableWordParts += $faqItem.answer
+    }
+    $indexableWordCount = Get-EnglishWordCount -Parts $indexableWordParts
+    if ($indexableWordCount -lt 1200) {
+      Add-ValidationError "$($question.slug): indexable question visible word count must be at least 1200, got $indexableWordCount"
+    }
+  }
+
   if ($question.slug -eq 'oopbuy-qc-photos') {
     $wordParts = @($question.title, $question.h1, $question.quickAnswer)
     foreach ($section in @($question.bodySections)) {

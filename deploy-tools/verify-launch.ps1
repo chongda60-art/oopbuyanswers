@@ -51,6 +51,9 @@ $requiredUrls = @(
 $normalizedSitemapUrls = @($sitemapUrls | ForEach-Object { $_.TrimEnd('/') })
 $missingRequired = @($requiredUrls | Where-Object { $normalizedSitemapUrls -notcontains $_.TrimEnd('/') })
 if ($missingRequired.Count -gt 0) { throw "Sitemap missing required URLs: $($missingRequired -join ', ')" }
+$noindexQuestionUrls = @($config.NoindexQuestionPaths | ForEach-Object { "$($config.ProductionUrl)$_" })
+$noindexInSitemap = @($noindexQuestionUrls | Where-Object { $normalizedSitemapUrls -contains $_.TrimEnd('/') })
+if ($noindexInSitemap.Count -gt 0) { throw "Noindex question URLs found in sitemap: $($noindexInSitemap -join ', ')" }
 
 $forbidden = @($config.ForbiddenPublicText)
 $pageResults = New-Object System.Collections.Generic.List[object]
@@ -77,6 +80,25 @@ foreach ($url in $sitemapUrls) {
   if ($curicart.bad -gt 0) { throw "Bad CuriCart UTM links on $url" }
 }
 
+$noindexResults = New-Object System.Collections.Generic.List[object]
+foreach ($url in $noindexQuestionUrls) {
+  $head = Invoke-CurlHead -Url $url -Follow
+  $status = ($head -split "`t")[1]
+  $html = Get-CurlText -Url $url
+  $robotsValue = Get-MetaRobots -Html $html
+  $canonicalValue = Get-Canonical -Html $html
+  $noindexResults.Add([ordered]@{
+    url = $url
+    status = $status
+    robots = $robotsValue
+    canonical = $canonicalValue
+    in_sitemap = $false
+  }) | Out-Null
+  if ($status -ne '200') { throw "Expected 200 for noindex short question URL $url, got $status" }
+  if ($robotsValue -ne 'noindex, follow') { throw "Expected noindex, follow for short question URL $url, got $robotsValue" }
+  if ($canonicalValue.TrimEnd('/') -ne $url.TrimEnd('/')) { throw "Canonical mismatch for noindex short question URL $url" }
+}
+
 $robots = Get-CurlText -Url "$($config.ProductionUrl)/robots.txt"
 if ($robots -match 'Disallow:\s*/') { throw 'robots.txt blocks the site.' }
 if ($robots -notmatch 'Allow:\s*/') { throw 'robots.txt does not allow crawl.' }
@@ -95,6 +117,7 @@ $report = [ordered]@{
   robots_allows_crawl = $true
   www_redirect = $wwwHead
   pages = $pageResults
+  noindex_question_pages = $noindexResults
 }
 $report | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $reportPath -Encoding utf8
 Write-Output "LAUNCH_VERIFY_REPORT=$reportPath"

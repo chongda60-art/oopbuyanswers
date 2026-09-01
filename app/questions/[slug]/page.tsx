@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CuricartBridge } from "@/components/CuricartBridge";
-import { allQuestions, getPublicQuestion, publicQuestions } from "@/lib/content";
+import { allQuestions, getPublicQuestion, isIndexableQuestion, publicQuestions } from "@/lib/content";
 import { siteConfig } from "@/lib/config";
 
 export function generateStaticParams() {
@@ -17,6 +17,10 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
       title: question.title,
       description: question.metaDescription || question.quickAnswer,
       alternates: { canonical: `/questions/${question.slug}` },
+      robots: {
+        index: siteConfig.launchIndexing && isIndexableQuestion(question),
+        follow: siteConfig.launchIndexing,
+      },
     };
   });
 }
