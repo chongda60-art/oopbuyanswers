@@ -48,7 +48,8 @@ $requiredUrls = @(
   "$($config.ProductionUrl)/contact",
   "$($config.ProductionUrl)/privacy"
 )
-$missingRequired = @($requiredUrls | Where-Object { $sitemapUrls -notcontains $_ })
+$normalizedSitemapUrls = @($sitemapUrls | ForEach-Object { $_.TrimEnd('/') })
+$missingRequired = @($requiredUrls | Where-Object { $normalizedSitemapUrls -notcontains $_.TrimEnd('/') })
 if ($missingRequired.Count -gt 0) { throw "Sitemap missing required URLs: $($missingRequired -join ', ')" }
 
 $forbidden = @($config.ForbiddenPublicText)
