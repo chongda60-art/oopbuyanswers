@@ -1,0 +1,186 @@
+﻿{
+    "generated_at":  "2026-09-01T21:31:14",
+    "production_url":  "https://oopbuyanswers.com",
+    "sitemap_url":  "https://oopbuyanswers.com/sitemap.xml",
+    "sitemap_url_count":  16,
+    "robots_allows_crawl":  true,
+    "www_redirect":  "https://www.oopbuyanswers.com/\t308\thttps://oopbuyanswers.com/",
+    "pages":  [
+                  {
+                      "url":  "https://oopbuyanswers.com/",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  1,
+                      "bad_utm_links":  0
+                  },
+                  {
+                      "url":  "https://oopbuyanswers.com/questions",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com/questions",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  0,
+                      "bad_utm_links":  0
+                  },
+                  {
+                      "url":  "https://oopbuyanswers.com/topics",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com/topics",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  0,
+                      "bad_utm_links":  0
+                  },
+                  {
+                      "url":  "https://oopbuyanswers.com/sources",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com/sources",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  0,
+                      "bad_utm_links":  0
+                  },
+                  {
+                      "url":  "https://oopbuyanswers.com/about",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com/about",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  0,
+                      "bad_utm_links":  0
+                  },
+                  {
+                      "url":  "https://oopbuyanswers.com/contact",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com/contact",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  0,
+                      "bad_utm_links":  0
+                  },
+                  {
+                      "url":  "https://oopbuyanswers.com/privacy",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com/privacy",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  0,
+                      "bad_utm_links":  0
+                  },
+                  {
+                      "url":  "https://oopbuyanswers.com/questions/oopbuy-qc-photos",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com/questions/oopbuy-qc-photos",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  1,
+                      "bad_utm_links":  0
+                  },
+                  {
+                      "url":  "https://oopbuyanswers.com/questions/oopbuy-qc-finder",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com/questions/oopbuy-qc-finder",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  1,
+                      "bad_utm_links":  0
+                  },
+                  {
+                      "url":  "https://oopbuyanswers.com/questions/oopbuy-spreadsheet-with-qc",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com/questions/oopbuy-spreadsheet-with-qc",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  1,
+                      "bad_utm_links":  0
+                  },
+                  {
+                      "url":  "https://oopbuyanswers.com/questions/oopbuy-shoe-size-chart",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com/questions/oopbuy-shoe-size-chart",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  1,
+                      "bad_utm_links":  0
+                  },
+                  {
+                      "url":  "https://oopbuyanswers.com/questions/oopbuy-weidian-link",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com/questions/oopbuy-weidian-link",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  1,
+                      "bad_utm_links":  0
+                  },
+                  {
+                      "url":  "https://oopbuyanswers.com/topics/qc",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com/topics/qc",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  1,
+                      "bad_utm_links":  0
+                  },
+                  {
+                      "url":  "https://oopbuyanswers.com/topics/sku-size",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com/topics/sku-size",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  1,
+                      "bad_utm_links":  0
+                  },
+                  {
+                      "url":  "https://oopbuyanswers.com/topics/product-links",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com/topics/product-links",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  1,
+                      "bad_utm_links":  0
+                  },
+                  {
+                      "url":  "https://oopbuyanswers.com/topics/spreadsheet",
+                      "status":  "200",
+                      "robots":  "index, follow",
+                      "canonical":  "https://oopbuyanswers.com/topics/spreadsheet",
+                      "forbidden_hits":  [
+
+                                         ],
+                      "curicart_links":  1,
+                      "bad_utm_links":  0
+                  }
+              ]
+}

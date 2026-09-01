@@ -1,0 +1,100 @@
+﻿{
+    "generated_at":  "2026-09-01T21:24:39",
+    "executed":  true,
+    "host":  "oopbuyanswers.com",
+    "key_location":  "https://oopbuyanswers.com/5fe764c20de640c08126a04385fa4761.txt",
+    "submitted_urls":  [
+                           "https://oopbuyanswers.com/",
+                           "https://oopbuyanswers.com/questions/oopbuy-qc-photos"
+                       ],
+    "results":  [
+                    {
+                        "endpoint":  "Generic IndexNow",
+                        "api":  "https://api.indexnow.org/indexnow",
+                        "url":  "https://oopbuyanswers.com/",
+                        "http_status":  "202",
+                        "response_file":  "F:\\seojieliu\\reports\\indexnow-response-Generic-IndexNow-20260901-212418.txt",
+                        "source":  "https://www.indexnow.org/documentation"
+                    },
+                    {
+                        "endpoint":  "Generic IndexNow",
+                        "api":  "https://api.indexnow.org/indexnow",
+                        "url":  "https://oopbuyanswers.com/questions/oopbuy-qc-photos",
+                        "http_status":  "202",
+                        "response_file":  "F:\\seojieliu\\reports\\indexnow-response-Generic-IndexNow-20260901-212418.txt",
+                        "source":  "https://www.indexnow.org/documentation"
+                    },
+                    {
+                        "endpoint":  "Bing",
+                        "api":  "https://www.bing.com/indexnow",
+                        "url":  "https://oopbuyanswers.com/",
+                        "http_status":  "202",
+                        "response_file":  "F:\\seojieliu\\reports\\indexnow-response-Bing-20260901-212418.txt",
+                        "source":  "https://www.bing.com/indexnow/meta.json"
+                    },
+                    {
+                        "endpoint":  "Bing",
+                        "api":  "https://www.bing.com/indexnow",
+                        "url":  "https://oopbuyanswers.com/questions/oopbuy-qc-photos",
+                        "http_status":  "200",
+                        "response_file":  "F:\\seojieliu\\reports\\indexnow-response-Bing-20260901-212418.txt",
+                        "source":  "https://www.bing.com/indexnow/meta.json"
+                    },
+                    {
+                        "endpoint":  "Yandex",
+                        "api":  "https://yandex.com/indexnow",
+                        "url":  "https://oopbuyanswers.com/",
+                        "http_status":  "202",
+                        "response_file":  "F:\\seojieliu\\reports\\indexnow-response-Yandex-20260901-212418.txt",
+                        "source":  "https://www.yandex.com/indexnow/meta.json"
+                    },
+                    {
+                        "endpoint":  "Yandex",
+                        "api":  "https://yandex.com/indexnow",
+                        "url":  "https://oopbuyanswers.com/questions/oopbuy-qc-photos",
+                        "http_status":  "200",
+                        "response_file":  "F:\\seojieliu\\reports\\indexnow-response-Yandex-20260901-212418.txt",
+                        "source":  "https://www.yandex.com/indexnow/meta.json"
+                    },
+                    {
+                        "endpoint":  "Seznam",
+                        "api":  "https://search.seznam.cz/indexnow",
+                        "url":  "https://oopbuyanswers.com/",
+                        "http_status":  "200",
+                        "response_file":  "F:\\seojieliu\\reports\\indexnow-response-Seznam-20260901-212418.txt",
+                        "source":  "https://search.seznam.cz/indexnow/meta.json"
+                    },
+                    {
+                        "endpoint":  "Seznam",
+                        "api":  "https://search.seznam.cz/indexnow",
+                        "url":  "https://oopbuyanswers.com/questions/oopbuy-qc-photos",
+                        "http_status":  "200",
+                        "response_file":  "F:\\seojieliu\\reports\\indexnow-response-Seznam-20260901-212418.txt",
+                        "source":  "https://search.seznam.cz/indexnow/meta.json"
+                    },
+                    {
+                        "endpoint":  "Yep",
+                        "api":  "https://indexnow.yep.com/indexnow",
+                        "url":  "https://oopbuyanswers.com/",
+                        "http_status":  "200",
+                        "response_file":  "F:\\seojieliu\\reports\\indexnow-response-Yep-20260901-212418.txt",
+                        "source":  "https://indexnow.yep.com/indexnow/meta.json"
+                    },
+                    {
+                        "endpoint":  "Yep",
+                        "api":  "https://indexnow.yep.com/indexnow",
+                        "url":  "https://oopbuyanswers.com/questions/oopbuy-qc-photos",
+                        "http_status":  "200",
+                        "response_file":  "F:\\seojieliu\\reports\\indexnow-response-Yep-20260901-212418.txt",
+                        "source":  "https://indexnow.yep.com/indexnow/meta.json"
+                    },
+                    {
+                        "endpoint":  "Brave",
+                        "api":  null,
+                        "url":  "https://oopbuyanswers.com/, https://oopbuyanswers.com/questions/oopbuy-qc-photos",
+                        "status":  "not_submitted",
+                        "reason":  "No official IndexNow endpoint was found in the current IndexNow search engine list.",
+                        "source":  "https://www.indexnow.org/searchengines.json"
+                    }
+                ]
+}

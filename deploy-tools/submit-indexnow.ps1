@@ -30,6 +30,9 @@ $results = New-Object System.Collections.Generic.List[object]
 
 foreach ($endpoint in $endpoints) {
   foreach ($url in $urls) {
+    $urlSlug = ([Uri]$url).AbsolutePath.Trim('/')
+    if (-not $urlSlug) { $urlSlug = 'home' }
+    $urlSlug = $urlSlug -replace '[^A-Za-z0-9]+','-'
     $target = "$($endpoint.api)?url=$([Uri]::EscapeDataString($url))&key=$key&keyLocation=$([Uri]::EscapeDataString($keyLocation))"
     if (-not $Execute) {
       $results.Add([ordered]@{
@@ -41,7 +44,7 @@ foreach ($endpoint in $endpoints) {
       }) | Out-Null
       continue
     }
-    $responseFile = Join-Path $reportDir "indexnow-response-$($endpoint.name -replace '[^A-Za-z0-9]+','-')-$stamp.txt"
+    $responseFile = Join-Path $reportDir "indexnow-response-$($endpoint.name -replace '[^A-Za-z0-9]+','-')-$urlSlug-$stamp.txt"
     $statusCode = & curl.exe -L --connect-timeout 20 --max-time 30 -s -o $responseFile -w "%{http_code}" $target
     $results.Add([ordered]@{
       endpoint = $endpoint.name
