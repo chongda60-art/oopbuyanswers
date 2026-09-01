@@ -16,6 +16,13 @@ export type QuestionFaq = {
   answer: string;
 };
 
+export type QuestionBodySection = {
+  heading: string;
+  paragraphs?: string[];
+  bullets?: string[];
+  ordered?: string[];
+};
+
 export type ProductPreviewBridge = {
   type: "productPreview";
   productName: string;
@@ -49,6 +56,7 @@ export type QuestionRecord = {
   targetKeyword: string;
   title: string;
   h1: string;
+  metaDescription?: string;
   summary: string;
   status: QuestionStatus;
   primaryKeyword: string;
@@ -58,6 +66,7 @@ export type QuestionRecord = {
   updatedAt: string;
   quickAnswer: string;
   evidenceSummary: string;
+  bodySections?: QuestionBodySection[];
   steps: string[];
   mistakes: string[];
   unknowns: string[];

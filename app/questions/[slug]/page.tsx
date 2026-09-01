@@ -15,7 +15,7 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
     if (!question) return { title: "Question not found" };
     return {
       title: question.title,
-      description: question.quickAnswer,
+      description: question.metaDescription || question.quickAnswer,
       alternates: { canonical: `/questions/${question.slug}` },
     };
   });
@@ -50,6 +50,7 @@ export default async function QuestionPage({ params }: { params: Promise<{ slug:
   const related = question.relatedQuestions
     .map((relatedSlug) => allQuestions.find((item) => item.slug === relatedSlug))
     .filter((item) => item && (item.status === "approved" || item.status === "published"));
+  const bodySections = question.bodySections || [];
 
   return (
     <main className="page answer-page">
@@ -71,25 +72,38 @@ export default async function QuestionPage({ params }: { params: Promise<{ slug:
         </div>
       </header>
 
-      <section className="answer-section">
-        <h2>What this answer is based on</h2>
-        <p>{question.evidenceSummary}</p>
-      </section>
+      {bodySections.length ? (
+        bodySections.map((section) => (
+          <section className={`answer-section${section.heading.toLowerCase().includes("check before relying") ? " unknown-box" : ""}`} key={section.heading}>
+            <h2>{section.heading}</h2>
+            {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            {section.ordered?.length ? <ol>{section.ordered.map((item) => <li key={item}>{item}</li>)}</ol> : null}
+            {section.bullets?.length ? <ul>{section.bullets.map((item) => <li key={item}>{item}</li>)}</ul> : null}
+          </section>
+        ))
+      ) : (
+        <>
+          <section className="answer-section">
+            <h2>What this answer is based on</h2>
+            <p>{question.evidenceSummary}</p>
+          </section>
 
-      <section className="answer-section">
-        <h2>Steps</h2>
-        <ol>{question.steps.map((step) => <li key={step}>{step}</li>)}</ol>
-      </section>
+          <section className="answer-section">
+            <h2>Steps</h2>
+            <ol>{question.steps.map((step) => <li key={step}>{step}</li>)}</ol>
+          </section>
 
-      <section className="answer-section">
-        <h2>Mistakes to avoid</h2>
-        <ul>{question.mistakes.map((mistake) => <li key={mistake}>{mistake}</li>)}</ul>
-      </section>
+          <section className="answer-section">
+            <h2>Mistakes to avoid</h2>
+            <ul>{question.mistakes.map((mistake) => <li key={mistake}>{mistake}</li>)}</ul>
+          </section>
 
-      <section className="answer-section unknown-box">
-        <h2>What to check before relying on it</h2>
-        <ul>{question.unknowns.map((unknown) => <li key={unknown}>{unknown}</li>)}</ul>
-      </section>
+          <section className="answer-section unknown-box">
+            <h2>What to check before relying on it</h2>
+            <ul>{question.unknowns.map((unknown) => <li key={unknown}>{unknown}</li>)}</ul>
+          </section>
+        </>
+      )}
 
       <CuricartBridge items={question.curicartBridge} contentSlug={question.slug} />
 

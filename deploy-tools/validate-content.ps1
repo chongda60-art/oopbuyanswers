@@ -34,6 +34,11 @@ function ConvertTo-UtmSlug([string]$Value) {
   return $slug
 }
 
+function Get-EnglishWordCount([object[]]$Parts) {
+  $text = ($Parts | Where-Object { $null -ne $_ -and "$_".Trim().Length -gt 0 }) -join ' '
+  return [regex]::Matches($text, "\b[A-Za-z][A-Za-z'’\-]*\b").Count
+}
+
 function Test-CuricartUtm([string]$Url, [string]$ExpectedContent) {
   try {
     if ($Url -match '\\$') { return 'URL must not end with a backslash' }
@@ -78,6 +83,23 @@ foreach ($question in $questions) {
     foreach ($visibleField in @('summary','quickAnswer','evidenceSummary')) {
       if ($question.$visibleField -match 'The user wants') { Add-ValidationError "$($question.slug): $visibleField contains internal research wording" }
     }
+  }
+
+  if ($question.slug -eq 'oopbuy-qc-photos') {
+    $wordParts = @($question.title, $question.h1, $question.quickAnswer)
+    foreach ($section in @($question.bodySections)) {
+      $wordParts += $section.heading
+      $wordParts += @($section.paragraphs)
+      $wordParts += @($section.ordered)
+      $wordParts += @($section.bullets)
+    }
+    foreach ($faqItem in @($question.faq)) {
+      $wordParts += $faqItem.question
+      $wordParts += $faqItem.answer
+    }
+    $wordCount = Get-EnglishWordCount -Parts $wordParts
+    if ($wordCount -lt 1200) { Add-ValidationError "$($question.slug): visible article word count must be at least 1200, got $wordCount" }
+    if (@($question.faq).Count -lt 5) { Add-ValidationError "$($question.slug): must include at least 5 FAQ items" }
   }
 
   $bridge = @($question.curicartBridge)
