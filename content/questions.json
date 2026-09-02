@@ -1352,5 +1352,528 @@
     "relatedQuestions": [],
     "curicartBridge": [],
     "summary": "Check coupon wording, expiration, route limits, country limits, and minimum-spend details before relying on a shipping discount."
+  },
+  {
+    "id": "q-oopbuy-qc-photos-not-showing",
+    "slug": "oopbuy-qc-photos-not-showing",
+    "targetKeyword": "oopbuy qc photos not showing after warehouse arrival",
+    "title": "Why Are My Oopbuy QC Photos Not Showing After Warehouse Arrival?",
+    "h1": "Why Are My Oopbuy QC Photos Not Showing After Warehouse Arrival?",
+    "metaDescription": "Oopbuy QC photos not showing after warehouse arrival? Check the item status, identifier, image area, update time, and current support information.",
+    "summary": "Check the item record, current status, update time, SKU, and photo area before assuming warehouse QC photos are missing.",
+    "status": "approved",
+    "indexable": true,
+    "primaryKeyword": "oopbuy qc photos not showing",
+    "searchIntent": "Help shoppers troubleshoot missing Oopbuy QC photos after a warehouse-related status appears.",
+    "topic": "qc",
+    "priority": 6,
+    "updatedAt": "2026-09-02",
+    "quickAnswer": "If your Oopbuy QC photos are not showing after warehouse arrival, first confirm that the same item is marked as stocked or stored in the current Oopbuy record. A carrier delivery event is not always the same as completed warehouse intake. Check the item identifier, latest status time, photo area, and any issue notice. Keep screenshots of the current state, then use Oopbuy's current help or support channel if the record remains incomplete.",
+    "evidenceSummary": "Check the item record, current status, update time, SKU, and photo area before assuming warehouse QC photos are missing.",
+    "bodySections": [
+      {
+        "heading": "Start With the Exact Item Record",
+        "paragraphs": [
+          "Open the record for the item that is missing photos. Do not begin with a spreadsheet thumbnail, seller image, tracking screenshot, or saved product title. Those references may describe the product, but they do not prove which warehouse record you are viewing.",
+          "Write down the item or order reference shown on the page. Also record the source title, selected color, size, and style if they are visible. This matters when several items have similar names or when the same product was added more than once."
+        ]
+      },
+      {
+        "heading": "Read the Current Status Word by Word",
+        "paragraphs": [
+          "A current public Oopbuy product page shows a sequence that includes seller dispatch, estimated warehouse arrival, and a stocked stage. The page says QC photos become viewable after the item reaches the relevant warehouse stage. This gives users a useful distinction: an estimated arrival or outside tracking event is not the same record as completed storage.",
+          "Look at the exact status label on your item page. Do not replace it with your own interpretation. For example, “delivered” on a domestic carrier page may only show that a parcel reached an address. It does not by itself show that Oopbuy has matched, inspected, weighed, and stored the item under your account.",
+          "If the page shows a seller or transit stage, continue to monitor the live record. If it shows a warehouse stage, use the checks below."
+        ]
+      },
+      {
+        "heading": "Compare the Latest Update Times",
+        "paragraphs": [
+          "Record the time beside each useful event:",
+          "Do not calculate a promised photo time from another user's post. Reddit threads show that users encounter different delays and status combinations. Those reports confirm the confusion, but they do not establish a standard Oopbuy processing window."
+        ],
+        "bullets": [
+          "the seller dispatch or domestic tracking update;",
+          "the carrier delivery event;",
+          "the Oopbuy warehouse-related status;",
+          "the most recent change on the item record;",
+          "the time when you checked the photo area."
+        ]
+      },
+      {
+        "heading": "Separate Receipt, Inspection, and Storage",
+        "paragraphs": [
+          "Oopbuy's public Inspection Information page describes several warehouse actions. It says packages that meet receipt requirements are opened for a prohibited-item check, then weighed and stored. It also says the warehouse checks visible specifications such as quantity, color, and size.",
+          "The same page excludes issues such as color difference, size error, and usage effect from its inspection scope. A warehouse inspection record therefore does not confirm every visual, fit, or performance detail.",
+          "For troubleshooting, keep the stages separate:",
+          "The public page does not define how quickly every step finishes. Check the live item record instead of treating these events as simultaneous."
+        ],
+        "ordered": [
+          "A carrier reports movement or delivery.",
+          "The warehouse receives the package.",
+          "The item is matched to the correct record.",
+          "The stated inspection and storage work is completed.",
+          "The item page exposes the related images or status."
+        ]
+      },
+      {
+        "heading": "Check the Photo Area for the Same SKU",
+        "paragraphs": [
+          "When a photo section appears, compare it with the item details before judging the images. Confirm the product title, item identifier, selected color, selected size, and visible style notes.",
+          "Then count only the images attached to that record. Do not add seller listing photos, spreadsheet previews, or pictures from another product page to the warehouse set. They may help with comparison, but they come from a different source.",
+          "If the photo area is empty, record what you can see. Note whether the section itself is present, whether it shows a loading state, and whether any warning or issue label appears. A blank section, a missing section, and an item-level error are different observations."
+        ]
+      },
+      {
+        "heading": "Look for an Item-Level Issue",
+        "paragraphs": [
+          "An image problem may be connected to the item record rather than the photo viewer. Check for a visible warning, unmatched option, incomplete specification, or source-page error.",
+          "A current public Oopbuy page for an unavailable record displays “Item not found” and says the item may be unavailable, the link may have expired, or the store may have closed. That message describes possible source-page states. It does not prove why a separate warehouse photo record is missing.",
+          "Keep the two questions apart:",
+          "A broken source link does not automatically erase an existing warehouse record. A working source link also does not prove that warehouse processing is complete."
+        ],
+        "bullets": [
+          "Does the marketplace product link still resolve?",
+          "Does the warehouse item record show its own images and status?"
+        ]
+      },
+      {
+        "heading": "Refresh the Record Without Losing Evidence",
+        "paragraphs": [
+          "Save a screenshot with the item identifier, status, and check time. Reload the item page once, then record whether the state changed. Avoid switching among similar records during this check."
+        ]
+      },
+      {
+        "heading": "Prepare a Clear Support Record",
+        "paragraphs": [
+          "If the item is shown in a warehouse stage but the expected images still do not appear, gather the smallest useful set of details:",
+          "Use the current help or support option shown on Oopbuy and ask about the specific item record. Do not share passwords, payment details, or unrelated account information publicly."
+        ],
+        "bullets": [
+          "item or order reference;",
+          "exact current status wording;",
+          "selected color, size, and style;",
+          "carrier delivery event, if relevant;",
+          "latest Oopbuy update time;",
+          "screenshot of the missing or empty image area;",
+          "screenshot of any visible warning;",
+          "time and device used for the check."
+        ]
+      },
+      {
+        "heading": "Product Photos and Warehouse QC Photos Are Different",
+        "paragraphs": [
+          "Seller listing images present the product before warehouse handling. Spreadsheet images may come from listings, community posts, or warehouse records. CuriCart product pages provide photos and option context for early research. Oopbuy warehouse QC photos relate to an item after the relevant warehouse process.",
+          "Product photos can help identify expected color, panel layout, print position, or style. Warehouse images show the visible item attached to that record. Neither type proves hidden construction, fit, durability, or authenticity.",
+          "Before the warehouse stage, you can review product and source context through the CuriCart Oopbuy product-research topic. Keep that research separate from the warehouse images you are trying to locate.",
+          "For more detail on photo types, read where to find Oopbuy QC photos and what an Oopbuy QC finder can verify."
+        ]
+      },
+      {
+        "heading": "Common Mistakes"
+      },
+      {
+        "heading": "Treating carrier delivery as completed storage",
+        "paragraphs": [
+          "Carrier tracking and warehouse status are different records. Check both."
+        ]
+      },
+      {
+        "heading": "Looking at the wrong item",
+        "paragraphs": [
+          "Match the item identifier and selected option, not only the image."
+        ]
+      },
+      {
+        "heading": "Calling every product image a QC photo",
+        "paragraphs": [
+          "Label seller, spreadsheet, CuriCart, and warehouse images by source."
+        ]
+      },
+      {
+        "heading": "Using another user's timing as a rule",
+        "paragraphs": [
+          "A community report cannot establish the processing time for your item."
+        ]
+      },
+      {
+        "heading": "Contacting support without the current status",
+        "paragraphs": [
+          "Include the item reference, exact status, and useful screenshots."
+        ]
+      },
+      {
+        "heading": "What This Check Cannot Confirm",
+        "paragraphs": [
+          "This checklist cannot determine a fixed image-release time, a standard number of images, a fee for extra views, or the result of a support request. It also cannot confirm product quality, fit, hidden condition, seller reliability, or authenticity.",
+          "Those details either depend on the current Oopbuy account interface, the specific item, or information that is not available on the public pages reviewed for this guide. If the live page does not define a field, keep it unconfirmed."
+        ]
+      },
+      {
+        "heading": "Final Checklist",
+        "paragraphs": [
+          "Before reporting that Oopbuy QC photos are not showing, confirm that you have:"
+        ],
+        "bullets": [
+          "opened the exact item record;",
+          "matched the item or order reference;",
+          "copied the current status wording;",
+          "separated carrier delivery from warehouse storage;",
+          "recorded the latest update times;",
+          "checked the photo area for the same SKU;",
+          "captured any warning or empty-state message;",
+          "refreshed once after saving the original state;",
+          "prepared screenshots without exposing private data;",
+          "used the current help or support path for that item."
+        ]
+      }
+    ],
+    "steps": [],
+    "mistakes": [],
+    "unknowns": [],
+    "faq": [
+      {
+        "question": "Why are there no Oopbuy QC photos when tracking says delivered?",
+        "answer": "The carrier's delivery event may not mean that warehouse intake, item matching, inspection, and storage are complete. Compare the carrier record with the exact status on the current Oopbuy item page."
+      },
+      {
+        "question": "How long should Oopbuy QC photos take to appear?",
+        "answer": "The public pages reviewed for this guide do not establish one fixed time for every item. Check the current status and update time, then ask through the current support channel if the item appears stored but the image area remains incomplete."
+      },
+      {
+        "question": "Are seller product photos the same as Oopbuy warehouse QC photos?",
+        "answer": "No. Seller photos belong to the marketplace listing. Warehouse QC photos relate to the item record after the relevant warehouse process. Keep their sources separate when comparing details."
+      },
+      {
+        "question": "Should I request extra photos when the normal photo area is empty?",
+        "answer": "First confirm that the item record has reached the relevant warehouse stage and that the existing image section is actually missing or empty. Any current extra-photo option, price, allowance, or timing must be checked in the live Oopbuy interface."
+      },
+      {
+        "question": "What should I include when asking about missing QC photos?",
+        "answer": "Include the item or order reference, exact status text, selected SKU, latest update time, and a screenshot of the photo area or warning. Do not post private account or payment information publicly."
+      }
+    ],
+    "sources": [],
+    "relatedTopics": [
+      "qc",
+      "product-links"
+    ],
+    "relatedQuestions": [
+      "oopbuy-qc-photos",
+      "oopbuy-qc-finder",
+      "oopbuy-spreadsheet-with-qc"
+    ],
+    "curicartBridge": [
+      {
+        "type": "categoryLink",
+        "categoryName": "Oopbuy product research",
+        "canonicalUrl": "https://www.curicart.com/en/agentslist_12.html?spreadsheet=Oopbuy",
+        "utmUrl": "https://www.curicart.com/en/agentslist_12.html?spreadsheet=Oopbuy&utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_oopbuy_product_research",
+        "matchReason": "Browse Oopbuy-related product research examples before checking warehouse photo status.",
+        "status": "approved"
+      }
+    ]
+  },
+  {
+    "id": "q-oopbuy-spreadsheet-shoes",
+    "slug": "oopbuy-spreadsheet-shoes",
+    "targetKeyword": "oopbuy spreadsheet shoes",
+    "title": "How Should You Check an Oopbuy Spreadsheet for Shoes?",
+    "h1": "How Should You Check an Oopbuy Spreadsheet for Shoes?",
+    "metaDescription": "Check an Oopbuy shoe spreadsheet by comparing source links, itemID, product photos, style, size labels, price references, and update dates.",
+    "summary": "Use a shoe spreadsheet checklist for model, source URL, itemID, image type, size labels, price references, and row freshness.",
+    "status": "approved",
+    "indexable": true,
+    "primaryKeyword": "oopbuy spreadsheet shoes",
+    "searchIntent": "Show shoppers how to check shoe spreadsheet rows by source link, itemID, images, style, size, and price reference.",
+    "topic": "spreadsheet",
+    "priority": 7,
+    "updatedAt": "2026-09-02",
+    "quickAnswer": "Check an Oopbuy spreadsheet shoe row by matching the exact model, style, color, size system, product photos, listed-price reference, itemID, and original marketplace source. A useful row should make missing details visible instead of filling them with assumptions. Open the source page and compare every field before relying on the row. A spreadsheet can organize shoe research, but it cannot confirm current availability, fit, image origin, product condition, or Oopbuy handling by itself.",
+    "evidenceSummary": "Use a shoe spreadsheet checklist for model, source URL, itemID, image type, size labels, price references, and row freshness.",
+    "bodySections": [
+      {
+        "heading": "Begin With a Complete Shoe Identity",
+        "paragraphs": [
+          "A shoe name alone is not enough. One model can appear in several colors, materials, releases, or seller listings. A useful spreadsheet row should let you identify the exact version without depending on a small thumbnail.",
+          "Record these fields first:",
+          "If the row says only “white shoe,” “new runner,” or “best batch,” it does not provide a stable product identity. Promotional labels are not a replacement for the source title or item identifier.",
+          "Keep similar products separate. Two shoes may look alike while using different itemIDs, sizes, colors, or source pages."
+        ],
+        "bullets": [
+          "brand or maker name as displayed;",
+          "complete model name;",
+          "color or colorway wording;",
+          "style, version, or seller option label;",
+          "product type, such as running shoe, slide, or tennis shoe;",
+          "original-language title when available;",
+          "marketplace itemID;",
+          "complete source URL."
+        ]
+      },
+      {
+        "heading": "Open the Original Source Link",
+        "paragraphs": [
+          "The source link is the row's most important verification path. It lets you compare the spreadsheet entry with the current marketplace record.",
+          "Check the destination domain and save the complete URL. For a Weidian page, look for the numeric itemID in the address. Compare that number with any itemID written in the spreadsheet. A mismatch means the two records need separate review.",
+          "Compare the visible title, seller context, images, price, and option labels. A working URL only shows that the page responded when checked. It does not confirm option availability or support elsewhere.",
+          "If the page fails, record the exact state and check date. An expired link, removed item, login screen, empty page, and identifier mismatch are different problems.",
+          "For a detailed source-record method, use the Oopbuy Weidian link guide."
+        ]
+      },
+      {
+        "heading": "Identify the Type of Every Image",
+        "paragraphs": [
+          "An Oopbuy spreadsheet for shoes may show several kinds of images:",
+          "These images do not prove the same thing. A clean seller photo may help identify the intended style. A warehouse photo may show the visible item connected to a later record. A size-label photo may support one measurement comparison. None of them should be relabeled without a source.",
+          "A useful row should name the image type and source. If “QC” is not connected to an itemID, option, date, and warehouse record, call it a product photo or visual reference.",
+          "Use the Oopbuy spreadsheet-with-QC checklist when you need to evaluate image provenance and row completeness in more detail."
+        ],
+        "bullets": [
+          "seller listing photos;",
+          "CuriCart product photos;",
+          "spreadsheet thumbnails;",
+          "community-submitted photos;",
+          "warehouse-issued QC photos;",
+          "measurement or label photos."
+        ]
+      },
+      {
+        "heading": "Read Size Labels Without Guessing",
+        "paragraphs": [
+          "Shoe rows often combine EU, US, UK, CM, JP, men's, and women's labels. These labels must stay attached to the system shown on the source page.",
+          "Do not assume that a bare “42” means the same thing in every row. Do not treat a CM label as foot length unless the current chart defines it that way.",
+          "For each row, record:",
+          "If the spreadsheet and source page disagree, preserve both values and mark the difference.",
+          "The Oopbuy shoe size label guide explains how to keep labels, charts, foot measurements, and image measurements separate."
+        ],
+        "ordered": [
+          "the exact size label;",
+          "the named size system;",
+          "whether the option is men's, women's, unisex, or undefined;",
+          "any centimetre measurement and what it measures;",
+          "the visible minimum and maximum options;",
+          "the source of any conversion."
+        ]
+      },
+      {
+        "heading": "Treat Price as a Dated Reference",
+        "paragraphs": [
+          "A spreadsheet price is a dated reference. Record the currency, displayed amount, source, relevant option, and check date. A single number may not represent the current option or final amount.",
+          "If the row and source differ, keep the earlier value and record the new source state and date."
+        ]
+      },
+      {
+        "heading": "Check Row Freshness Field by Field",
+        "paragraphs": [
+          "An “updated” badge is too broad. A strong shoe row shows when its key fields were checked.",
+          "Useful date fields include:",
+          "One current field does not make every field current. A working link may have a changed price or size range. If no check date appears, treat freshness as unknown."
+        ],
+        "bullets": [
+          "source URL checked;",
+          "itemID matched;",
+          "price reference checked;",
+          "size options checked;",
+          "image source checked;",
+          "row last edited."
+        ]
+      },
+      {
+        "heading": "Compare the Row With a Simple Worksheet",
+        "paragraphs": [
+          "Use one line for the spreadsheet and one for the live source page. Then compare the fields side by side.",
+          "|---|---|---|---|",
+          "Use “Unknown” when the page does not define a field."
+        ],
+        "bullets": [
+          "Field — Spreadsheet row — Current source page — Result",
+          "Complete model — Record exact wording — Record exact wording — Match / Different / Unknown",
+          "Style or color — Record visible option — Record current option — Match / Different / Unknown",
+          "ItemID — Copy the number — Extract from URL — Match / Different / Unknown",
+          "Image type — Record label and source — Identify page source — Clear / Unclear",
+          "Size system — Record labels — Record chart or options — Match / Different / Unknown",
+          "Listed price — Amount, currency, date — Amount, currency, date — Match / Changed / Unknown",
+          "Link state — Last recorded state — Current state — Working / Changed / Unknown"
+        ]
+      },
+      {
+        "heading": "Related Shoe Research Examples",
+        "paragraphs": [
+          "Current CuriCart shoe pages can be used to practise these checks. They do not prove inclusion in an Oopbuy spreadsheet."
+        ]
+      },
+      {
+        "heading": "THE ROGER Clubhouse Pro - Style 30",
+        "paragraphs": [
+          "The current CuriCart page shows product photos, a listed reference of approximately $240, Style 30, size labels including EU36=WUS5=UK3=JP22, and Weidian itemID 7805795543. View the current product record."
+        ]
+      },
+      {
+        "heading": "On Cloudmonster 1 White Gray - Style 21",
+        "paragraphs": [
+          "The page shows product photos, a listed reference of approximately $240, Style 21, size labels including EU36=WUS5=UK3=JP22, and Weidian itemID 7808777696. Compare the source and option context."
+        ]
+      },
+      {
+        "heading": "Nike Mind 001 Slides - Style 16",
+        "paragraphs": [
+          "The current record shows product photos, a listed reference of approximately $300, Style 16, size labels including EU36=US4=UK3.5=CM23.0, and Weidian itemID 7805487415. Review the product fields.",
+          "You can also browse the current CuriCart Shoe category for more records. Recheck every page before using it as a spreadsheet example."
+        ]
+      },
+      {
+        "heading": "Common Spreadsheet Mistakes"
+      },
+      {
+        "heading": "Ranking rows by popularity alone",
+        "paragraphs": [
+          "Views or social mentions do not replace source, itemID, option, photo, price-date, and link checks."
+        ]
+      },
+      {
+        "heading": "Using one image to identify a shoe",
+        "paragraphs": [
+          "Compare the title, style, itemID, options, and several visible angles."
+        ]
+      },
+      {
+        "heading": "Calling all images QC photos",
+        "paragraphs": [
+          "Without clear warehouse provenance, use “product photo” or “visual reference.”"
+        ]
+      },
+      {
+        "heading": "Converting sizes before reading the chart",
+        "paragraphs": [
+          "Record the source label and measurement meaning before converting."
+        ]
+      },
+      {
+        "heading": "Treating the listed price as permanent",
+        "paragraphs": [
+          "Keep currency, amount, source, and date together."
+        ]
+      },
+      {
+        "heading": "Hiding broken or changed links",
+        "paragraphs": [
+          "Record the link state and what changed."
+        ]
+      },
+      {
+        "heading": "Shoe Row Checklist",
+        "paragraphs": [
+          "Before relying on a row, confirm that it includes:"
+        ],
+        "bullets": [
+          "complete model and style wording;",
+          "original-language title when available;",
+          "full source URL;",
+          "matching itemID;",
+          "image type and source;",
+          "visible color or style option;",
+          "named size system;",
+          "visible size range;",
+          "defined centimetre field, if used;",
+          "listed-price reference with currency and date;",
+          "current link state;",
+          "last checked date;",
+          "clear Unknown labels for missing fields."
+        ]
+      },
+      {
+        "heading": "What a Shoe Spreadsheet Cannot Prove",
+        "paragraphs": [
+          "A spreadsheet cannot prove current availability, fit, comfort, hidden construction, durability, seller reliability, authenticity, or final price. It also cannot confirm whether Oopbuy currently accepts or handles a source link.",
+          "Use the spreadsheet to organize research. Use the current source page to verify the listing record. Keep later warehouse images and platform information as separate evidence."
+        ]
+      }
+    ],
+    "steps": [],
+    "mistakes": [],
+    "unknowns": [],
+    "faq": [
+      {
+        "question": "What should an Oopbuy spreadsheet shoe row include?",
+        "answer": "It should include the complete model, style or color, source URL, itemID, image type, size system, visible option range, listed-price reference, link state, and check date. Missing fields should be marked Unknown."
+      },
+      {
+        "question": "Are spreadsheet shoe photos always QC photos?",
+        "answer": "No. They may be seller photos, product images, community photos, thumbnails, or warehouse-issued images. The row should identify the source before using the QC label."
+      },
+      {
+        "question": "How do I check the size in an Oopbuy shoe spreadsheet?",
+        "answer": "Copy the exact option label and named size system. Compare it with the current source chart or option list. Do not guess what a bare number or centimetre value measures."
+      },
+      {
+        "question": "Does a working source link mean the shoe is available?",
+        "answer": "No. It shows only that the page responded when checked. Confirm the current options and visible page state, and keep current availability unconfirmed unless the live record defines it."
+      },
+      {
+        "question": "Can a spreadsheet tell me which shoe is the best choice?",
+        "answer": "It can organize product and source information. It cannot prove fit, quality, authenticity, seller reliability, or which option is right for you."
+      }
+    ],
+    "sources": [],
+    "relatedTopics": [
+      "spreadsheet",
+      "sku-size",
+      "product-links"
+    ],
+    "relatedQuestions": [
+      "oopbuy-spreadsheet-with-qc",
+      "oopbuy-shoe-size-chart",
+      "oopbuy-weidian-link"
+    ],
+    "curicartBridge": [
+      {
+        "type": "productPreview",
+        "productName": "THE ROGER Clubhouse Pro Tennis Shoes",
+        "imageUrl": "https://si.geilicdn.com/pcitem1970743960-67620000019f5b60f42e0a20e7c7_800_800.jpg",
+        "curicartCategory": "Shoe",
+        "styleOrSku": "Style 30 · EU36=WUS5=UK3=JP22",
+        "sourceType": "CuriCart product record",
+        "canonicalUrl": "https://www.curicart.com/en/productview_4234_80.html?proname=on-the-roger-clubhouse-pro-tennis-shoes",
+        "utmUrl": "https://www.curicart.com/en/productview_4234_80.html?proname=on-the-roger-clubhouse-pro-tennis-shoes&utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_the_roger_clubhouse_pro_tennis_shoes",
+        "matchReason": "Use this record to compare shoe photos, Style 30, source context, and visible size labels.",
+        "verifiedAt": "2026-09-02",
+        "status": "approved"
+      },
+      {
+        "type": "productPreview",
+        "productName": "On Cloudmonster 1 Men's Cushioned Everyday Shoe White Gray",
+        "imageUrl": "https://si.geilicdn.com/pcitem1970743960-19d20000019f568634910a81347d_800_800.jpg",
+        "curicartCategory": "Shoe",
+        "styleOrSku": "Style 21 · EU36=WUS5=UK3=JP22",
+        "sourceType": "CuriCart product record",
+        "canonicalUrl": "https://www.curicart.com/en/productview_4203_79.html?proname=on-cloudmonster-1-running-shoes",
+        "utmUrl": "https://www.curicart.com/en/productview_4203_79.html?proname=on-cloudmonster-1-running-shoes&utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_on_cloudmonster_1_men_s_cushioned_everyday_shoe_white_gray",
+        "matchReason": "Use this record to compare a shoe title, Style 21, photos, and repeated size-label format.",
+        "verifiedAt": "2026-09-02",
+        "status": "approved"
+      },
+      {
+        "type": "productPreview",
+        "productName": "Nike Mind 001 Flyknit QS Slides",
+        "imageUrl": "https://si.geilicdn.com/pcitem1970743960-71ac0000019f547907d60a231316_800_800.jpg",
+        "curicartCategory": "Shoe",
+        "styleOrSku": "Style 16 · EU36=US4=UK3.5=CM23.0",
+        "sourceType": "CuriCart product record",
+        "canonicalUrl": "https://www.curicart.com/en/productview_4160_77.html?proname=nike-slides-sandals",
+        "utmUrl": "https://www.curicart.com/en/productview_4160_77.html?proname=nike-slides-sandals&utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_nike_mind_001_flyknit_qs_slides",
+        "matchReason": "Use this record to compare slide photos, Style 16, size labels, and source-page context.",
+        "verifiedAt": "2026-09-02",
+        "status": "approved"
+      },
+      {
+        "type": "categoryLink",
+        "categoryName": "Shoe",
+        "canonicalUrl": "https://www.curicart.com/en/Productlistt_1.html?fuid=1&&category=Shoe",
+        "utmUrl": "https://www.curicart.com/en/Productlistt_1.html?fuid=1&&category=Shoe&utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_shoe",
+        "matchReason": "Browse current shoe records while comparing spreadsheet fields, images, size labels, and source-page context.",
+        "status": "approved"
+      }
+    ]
   }
 ]

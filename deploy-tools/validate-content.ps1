@@ -66,6 +66,19 @@ function Test-AllowedCuricartCategory([string]$Name, [string]$Context) {
   }
 }
 
+function Test-IsAllowedCuricartTopicLink([object]$Item) {
+  try {
+    $uri = [Uri]"$($Item.canonicalUrl)"
+    return (
+      $uri.Host -eq 'www.curicart.com' -and
+      $uri.AbsolutePath -eq '/en/agentslist_12.html' -and
+      "$($Item.categoryName)" -eq 'Oopbuy product research'
+    )
+  } catch {
+    return $false
+  }
+}
+
 foreach ($question in $questions) {
   foreach ($field in $requiredQuestionFields) {
     if (-not ($question.PSObject.Properties.Name -contains $field)) { Add-ValidationError "$($question.slug): missing required field $field" }
@@ -143,7 +156,9 @@ foreach ($question in $questions) {
         foreach ($field in $requiredCategoryFields) {
           if (-not (Test-Text $item.$field)) { Add-ValidationError "$($question.slug): renderable categoryLink missing $field" }
         }
-        Test-AllowedCuricartCategory -Name "$($item.categoryName)" -Context "$($question.slug)"
+        if (-not (Test-IsAllowedCuricartTopicLink -Item $item)) {
+          Test-AllowedCuricartCategory -Name "$($item.categoryName)" -Context "$($question.slug)"
+        }
       } else {
         Add-ValidationError "$($question.slug): unknown bridge type $($item.type)"
       }

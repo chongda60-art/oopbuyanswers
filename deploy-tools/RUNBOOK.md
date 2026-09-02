@@ -4,6 +4,30 @@ All scripts live under `F:\seojieliu\deploy-tools`. They read `config.psd1` when
 
 Do not commit `config.psd1`, `.vercel`, environment files, cookies, browser sessions, tokens, or DNS credentials.
 
+## Low-token default workflow
+
+Use this flow for normal Oopbuy Answers maintenance. It avoids rereading old research files and avoids pasting long logs into chat.
+
+Start every run:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\status.ps1
+```
+
+Validate before reporting completion:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\lowtoken-verify.ps1
+```
+
+Check production launch/indexing state only:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\launch-check.ps1
+```
+
+Read `F:\seojieliu\PROJECT_STATE.md` first when resuming. Detailed logs go to `reports/`; chat output should stay to changed files, commit/deployment when applicable, URL, pass/fail, report path, and blockers.
+
 ## Default safe path
 
 1. Copy `config.example.psd1` to `config.psd1` and set the real Git remote.
@@ -48,6 +72,7 @@ Every `run-all.ps1` run writes a transcript to `reports/deploy-run-*.log`.
 ## Script map
 
 - `common.ps1`: shared config, Node runtime path, curl helpers, and log path helper.
+- `status.ps1`: compact current-state summary: git, dirty source files excluding report noise, current commit, public/indexable question counts, live robots, sitemap count, and www status. Writes `reports/lowtoken-status-*.json`.
 - `preflight.ps1`: project file checks, Git remote check, secret-pattern scan, and indexing guard.
 - `validate-content.ps1`: validates question fixtures, CuriCart bridge fields, renderable status, max five product cards, UTM, CuriCart host, empty title/category/image prevention, and no local product routes.
 - `build.ps1`: preflight, `pnpm install --frozen-lockfile`, `pnpm check`, `pnpm lint`, and `pnpm build`.
@@ -55,13 +80,40 @@ Every `run-all.ps1` run writes a transcript to `reports/deploy-run-*.log`.
 - `dns-plan.ps1`: prints required DNS records and observed public DNS; with `-VerifyWithVercel` runs Vercel domain verification.
 - `verify.ps1`: checks production status, www redirect, noindex meta, robots, empty sitemap, required 200 pages, required 404 pages, and forbidden draft/fixture text.
 - `verify-launch.ps1`: checks the approved indexing launch state: robots allow, non-empty sitemap, sitemap URLs 200, self-canonical, index/follow, no forbidden public text, complete CuriCart UTM links, and www redirect to apex.
+- `launch-check.ps1`: compact wrapper for production launch checks. Runs `verify-launch.ps1` plus CuriCart UTM checks for every sitemap URL, then writes `reports/lowtoken-launch-check-*.json`.
+- `lowtoken-verify.ps1`: compact all-in validation. Runs `pnpm check`, `pnpm lint`, `pnpm build`, `validate-content.ps1`, and `launch-check.ps1`; writes a short JSON report and a full log under `reports/`.
 - `submit-indexnow.ps1`: submits the approved launch URLs to verified IndexNow-compatible endpoints and writes one JSON receipt report under `reports/`. Use `-Execute` only after production launch verification passes.
+- `gsc-sitemap.ps1`: verifies the Google HTML verification file, robots.txt sitemap reference, sitemap XML, and every sitemap URL before or after manual Google Search Console sitemap submission. It writes a JSON evidence report under `reports/`.
 - `screenshots.ps1`: captures production desktop/mobile screenshots for home and Questions.
 - `run-all.ps1`: orchestrates the full flow and logs the run.
 
 ## Indexing launch gate
 
 Keep `NEXT_PUBLIC_LAUNCH_INDEXING=false` until the first professional question page, official facts, content review, fact review, SEO review, and indexing launch are separately approved. After approval, set the launch switch to true, run `preflight.ps1 -AllowLaunchIndexing`, deploy production, run `verify-launch.ps1`, then run `submit-indexnow.ps1 -Execute` once for the launch batch.
+
+## Google Search Console sitemap flow
+
+Use this path for Oopbuy Answers. Do not use the Google Indexing API for normal question pages.
+
+Before submitting in Google Search Console:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\gsc-sitemap.ps1
+```
+
+To open the correct Google Search Console sitemap screen from the local machine:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\gsc-sitemap.ps1 -OpenConsole
+```
+
+After the sitemap is submitted manually in Google Search Console, record the evidence:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy-tools\gsc-sitemap.ps1 -RecordSubmitted
+```
+
+The expected sitemap is `https://oopbuyanswers.com/sitemap.xml`. The expected Google verification file is `https://oopbuyanswers.com/googledfcd3ef6e7fa1e2b.html`. The script does not store Google cookies or OAuth tokens and does not submit through the Search Console API unless a separate approved OAuth workflow is added later.
 
 ## Reusable Buy-site content loop
 
