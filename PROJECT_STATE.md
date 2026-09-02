@@ -9,8 +9,8 @@ Last updated: 2026-09-03 Asia/Shanghai
 - WWW URL: `https://www.oopbuyanswers.com`
 - GitHub remote: `https://github.com/chongda60-art/oopbuyanswers.git`
 - Vercel scope/project: `chen-d2eb/oopbuyanswers`
-- Current deployed content commit: `7942f5b`
-- Current production deployment observed: `dpl_4Uax6tF9CfCPdA5VVT7Fo4JzRTho`
+- Current deployed content commit: use `git rev-parse --short HEAD` after each push.
+- Current production deployment observed: use the latest Vercel inspect output or `reports/launch-verification-*.json`.
 
 ## Indexing state
 
