@@ -23,10 +23,19 @@ function Invoke-Step {
   $started = Get-Date
   try {
     "STEP_START $Name $(Get-Date -Format s)" | Add-Content -LiteralPath $logPath -Encoding UTF8
+    $previousErrorActionPreference = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    $global:LASTEXITCODE = 0
     & $Command *>> $logPath
-    if ($LASTEXITCODE -ne 0) { throw "$Name exited with code $LASTEXITCODE" }
+    $exitCode = $LASTEXITCODE
+    $stepSucceeded = $?
+    $ErrorActionPreference = $previousErrorActionPreference
+    if ((-not $stepSucceeded) -or $exitCode -ne 0) { throw "$Name exited with code $exitCode" }
     return [ordered]@{ name = $Name; status = 'ok'; seconds = [math]::Round(((Get-Date) - $started).TotalSeconds, 1) }
   } catch {
+    if ($previousErrorActionPreference) {
+      $ErrorActionPreference = $previousErrorActionPreference
+    }
     return [ordered]@{ name = $Name; status = 'failed'; seconds = [math]::Round(((Get-Date) - $started).TotalSeconds, 1); error = $_.Exception.Message }
   }
 }
@@ -52,13 +61,32 @@ try {
     $overallStatus = 'failed'
   }
 
-  $report = New-Object System.Collections.Specialized.OrderedDictionary
-  $report.Add('generated_at', (Get-Date).ToString('s'))
-  $report.Add('overall_status', $overallStatus)
-  $report.Add('steps', [object]@($steps))
-  $report.Add('status_summary', [object]$statusLine)
-  $report.Add('log_path', $logPath)
-  $report.Add('report_path', $reportPath)
+  $stepObjects = @(
+    $steps | ForEach-Object {
+      $step = [ordered]@{
+        name = "$($_.name)"
+        status = "$($_.status)"
+        seconds = [double]$_.seconds
+      }
+      if ($_.Contains('error')) {
+        $step.error = "$($_.error)"
+      }
+      $step
+    }
+  )
+  $statusSummary = ''
+  if ($statusLine) {
+    $statusSummary = "$statusLine"
+  }
+
+  $report = [ordered]@{
+    generated_at = (Get-Date).ToString('s')
+    overall_status = $overallStatus
+    steps = $stepObjects
+    status_summary = $statusSummary
+    log_path = $logPath
+    report_path = $reportPath
+  }
   $report | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath $reportPath -Encoding UTF8
 
   if ($failed.Count -gt 0) {
