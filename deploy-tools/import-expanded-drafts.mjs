@@ -3,6 +3,8 @@ import path from "node:path";
 
 const projectRoot = process.cwd();
 const questionsPath = path.join(projectRoot, "content", "questions.json");
+const slugArgIndex = process.argv.indexOf("--slug");
+const onlySlug = slugArgIndex >= 0 ? process.argv[slugArgIndex + 1] : "";
 
 const drafts = [
   {
@@ -32,6 +34,31 @@ const drafts = [
     title: "How Should You Read an Oopbuy Weidian Link?",
     h1: "How Should You Read an Oopbuy Weidian Link?",
     metaDescription: "Learn how to read an Oopbuy Weidian link by preserving the source URL, itemID, title, photos, SKU, size, price reference, and link state.",
+  },
+  {
+    slug: "oopbuy-taobao-link",
+    file: "OOPBUY_TAOBAO_LINK_NOT_WORKING_DRAFT.md",
+    title: "Why Is My Taobao Product Link Not Working on Oopbuy?",
+    h1: "Why Is My Taobao Product Link Not Working on Oopbuy?",
+    metaDescription: "Learn how to check a Taobao product link that does not work on Oopbuy by preserving the URL, item ID, source page, visible error, and product details.",
+    curicartBridge: [
+      {
+        type: "categoryLink",
+        categoryName: "Accessories",
+        canonicalUrl: "https://www.curicart.com/en/Productlistt_9.html?fuid=9&&category=Accessories",
+        utmUrl: "https://www.curicart.com/en/Productlistt_9.html?fuid=9&&category=Accessories&utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_accessories",
+        matchReason: "Compare product examples with visible photos, options, and source-page context while checking a Taobao link.",
+        status: "approved",
+      },
+      {
+        type: "categoryLink",
+        categoryName: "Shoe",
+        canonicalUrl: "https://www.curicart.com/en/Productlistt_1.html?fuid=1&&category=Shoe",
+        utmUrl: "https://www.curicart.com/en/Productlistt_1.html?fuid=1&&category=Shoe&utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_shoe",
+        matchReason: "Browse shoe examples when a source link needs image, style, SKU, or size comparison.",
+        status: "approved",
+      },
+    ],
   },
 ];
 
@@ -94,9 +121,13 @@ function sectionToBody(section) {
 }
 
 function parseDraft(markdown) {
-  const sections = splitSections(markdown);
+  const finalDraftMatch = markdown.match(/^# Final English Draft\s*$/m);
+  const publicMarkdown = finalDraftMatch
+    ? markdown.slice(finalDraftMatch.index + finalDraftMatch[0].length)
+    : markdown;
+  const sections = splitSections(publicMarkdown);
   const quick = sections.find((section) => section.heading === "Quick Answer");
-  const faqStart = sections.findIndex((section) => section.heading === "FAQ");
+  const faqStart = sections.findIndex((section) => section.heading === "FAQ" || section.heading === "Frequently Asked Questions");
   const referencesStart = sections.findIndex((section) => section.heading === "References Used for This Guide");
   const relatedProductStart = sections.findIndex((section) => section.heading === "Related Product Research");
 
@@ -126,7 +157,12 @@ function parseDraft(markdown) {
 }
 
 const questions = JSON.parse(fs.readFileSync(questionsPath, "utf8"));
-for (const draft of drafts) {
+const selectedDrafts = onlySlug ? drafts.filter((draft) => draft.slug === onlySlug) : drafts;
+if (onlySlug && selectedDrafts.length !== 1) {
+  throw new Error(`Unknown draft slug: ${onlySlug}`);
+}
+
+for (const draft of selectedDrafts) {
   const draftPath = path.join(projectRoot, "content", "oopbuy-first-10", "drafts", draft.file);
   const parsed = parseDraft(fs.readFileSync(draftPath, "utf8"));
   if (!parsed.quickAnswer) throw new Error(`Missing Quick Answer in ${draft.file}`);
@@ -143,7 +179,8 @@ for (const draft of drafts) {
   question.faq = parsed.faq;
   question.status = "approved";
   question.indexable = true;
+  if (draft.curicartBridge) question.curicartBridge = draft.curicartBridge;
 }
 
 fs.writeFileSync(questionsPath, `${JSON.stringify(questions, null, 2)}\n`);
-console.log(`Imported ${drafts.length} expanded drafts into ${questionsPath}`);
+console.log(`Imported ${selectedDrafts.length} expanded drafts into ${questionsPath}`);
