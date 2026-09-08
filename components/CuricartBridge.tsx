@@ -15,6 +15,17 @@ const productItems = (items: CuricartBridgeItem[]) =>
 const categoryItems = (items: CuricartBridgeItem[]) =>
   items.filter((item) => item.type === "categoryLink" && isRenderableBridgeItem(item));
 
+function getCategoryCta(item: Extract<CuricartBridgeItem, { type: "categoryLink" }>) {
+  if (item.ctaLabel) return item.ctaLabel;
+  if (item.displayTitle?.toLowerCase().includes("new product")) return "Browse New Products";
+  if (item.categoryName === "Shoe") return "Browse Shoes";
+  if (item.categoryName === "Accessories") return "Browse Accessories";
+  if (item.categoryName === "Electronics") return "Browse Electronics";
+  if (item.categoryName === "Clothing") return "Browse Clothing";
+  if (item.categoryName === "Bags") return "Browse Bags";
+  return "Browse category";
+}
+
 export function CuricartBridge({ items, contentSlug, context = "question", title = "Related product research" }: Props) {
   const products = productItems(items);
   const categories = categoryItems(items);
@@ -71,7 +82,7 @@ export function CuricartBridge({ items, contentSlug, context = "question", title
                 <span className="research-card-meta">Category</span>
                 <span className="research-card-title">{displayTitle}</span>
                 <span className="research-card-reason">{item.matchReason}</span>
-                <span className="research-card-cta">{displayTitle.toLowerCase().includes("guide") ? "Explore guide" : "Browse category"}</span>
+                <span className="research-card-cta">{getCategoryCta(item)}</span>
               </a>
             );
           })}

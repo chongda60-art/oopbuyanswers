@@ -42,6 +42,7 @@ export type CategoryLinkBridge = {
   type: "categoryLink";
   categoryName: string;
   displayTitle?: string;
+  ctaLabel?: string;
   canonicalUrl: string;
   utmUrl: string;
   matchReason: string;

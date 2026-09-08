@@ -11,7 +11,7 @@ export function QuestionCard({ question }: { question: QuestionRecord }) {
         </h2>
         <p>{question.summary || question.quickAnswer}</p>
       </div>
-      <Link className="text-cta" href={`/questions/${question.slug}`}>Read answer</Link>
+      <Link className="text-cta" href={`/questions/${question.slug}`}>Read guide</Link>
     </article>
   );
 }

@@ -23,7 +23,7 @@ export default function Home() {
           <h1>{contentConfig.homeTitle}</h1>
           <p>{contentConfig.homeSubtitle}</p>
           <div className="hero-actions">
-            <Link className="button-primary" href="/questions">Browse Oopbuy questions</Link>
+            <Link className="button-primary" href="/questions">Browse guides</Link>
             <Link className="button-secondary" href="#product-categories">Explore product categories</Link>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default function Home() {
               </div>
               <h3><Link href={`/questions/${question.slug}`}>{question.title}</Link></h3>
               <p>{question.summary}</p>
-              <Link className="text-cta" href={`/questions/${question.slug}`}>Read answer</Link>
+              <Link className="text-cta" href={`/questions/${question.slug}`}>Read guide</Link>
             </article>
           ))}
         </div>
