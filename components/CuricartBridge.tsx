@@ -63,14 +63,15 @@ export function CuricartBridge({ items, contentSlug, context = "question", title
           {categories.map((item, index) => {
             if (item.type !== "categoryLink") return null;
             const itemSlug = slugifyForUtm(item.categoryName);
+            const displayTitle = item.displayTitle || item.categoryName;
             const utmContent = context === "topic" ? `topic_${contentSlug}_${itemSlug}` : `question_related_${itemSlug}`;
             const href = withUtm(item.canonicalUrl, utmContent);
             return (
               <a className="research-card category-card" href={href} key={`${contentSlug}-category-${itemSlug}-${index}`}>
                 <span className="research-card-meta">Category</span>
-                <span className="research-card-title">{item.categoryName}</span>
+                <span className="research-card-title">{displayTitle}</span>
                 <span className="research-card-reason">{item.matchReason}</span>
-                <span className="research-card-cta">{item.categoryName.toLowerCase().includes("guide") ? "Explore guide" : "Browse category"}</span>
+                <span className="research-card-cta">{displayTitle.toLowerCase().includes("guide") ? "Explore guide" : "Browse category"}</span>
               </a>
             );
           })}

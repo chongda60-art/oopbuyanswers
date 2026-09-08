@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-09-08T07:53:46.313Z",
+  "sitemapQuestionCount": 10,
+  "pages": [
+    {
+      "slug": "oopbuy-shipping-cost",
+      "status": "approved",
+      "indexable": true,
+      "words": 1291,
+      "faq": 5,
+      "bridgeCards": 4,
+      "forbiddenHits": [],
+      "badUtm": []
+    },
+    {
+      "slug": "oopbuy-shipping-time",
+      "status": "approved",
+      "indexable": true,
+      "words": 1243,
+      "faq": 5,
+      "bridgeCards": 4,
+      "forbiddenHits": [],
+      "badUtm": []
+    }
+  ]
+}

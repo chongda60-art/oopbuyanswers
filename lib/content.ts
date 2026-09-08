@@ -41,6 +41,7 @@ export type ProductPreviewBridge = {
 export type CategoryLinkBridge = {
   type: "categoryLink";
   categoryName: string;
+  displayTitle?: string;
   canonicalUrl: string;
   utmUrl: string;
   matchReason: string;
