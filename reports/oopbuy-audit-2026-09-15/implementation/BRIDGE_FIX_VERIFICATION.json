@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-09-15T16:47:15.066Z",
+  "production": "https://oopbuyanswers.com",
+  "results": [
+    {
+      "path": "/questions/oopbuy-shipping-cost",
+      "status": 200,
+      "forbidden_count": 0,
+      "curicart_links": 3,
+      "bad_utm": 0,
+      "horizontal_overflow": false,
+      "h1": 1,
+      "elapsed_ms": 2700
+    },
+    {
+      "path": "/questions/oopbuy-shipping-time",
+      "status": 200,
+      "forbidden_count": 0,
+      "curicart_links": 3,
+      "bad_utm": 0,
+      "horizontal_overflow": false,
+      "h1": 1,
+      "elapsed_ms": 2925
+    },
+    {
+      "path": "/questions/oopbuy-qc-photos-not-showing",
+      "status": 200,
+      "forbidden_count": 0,
+      "curicart_links": 0,
+      "bad_utm": 0,
+      "horizontal_overflow": false,
+      "h1": 1,
+      "elapsed_ms": 2871
+    },
+    {
+      "path": "/topics/qc",
+      "status": 200,
+      "forbidden_count": 0,
+      "curicart_links": 6,
+      "bad_utm": 0,
+      "horizontal_overflow": false,
+      "h1": 1,
+      "elapsed_ms": 3106
+    },
+    {
+      "path": "/topics/product-links",
+      "status": 200,
+      "forbidden_count": 0,
+      "curicart_links": 13,
+      "bad_utm": 0,
+      "horizontal_overflow": false,
+      "h1": 1,
+      "elapsed_ms": 5208
+    },
+    {
+      "path": "/topics/shipping",
+      "status": 200,
+      "forbidden_count": 0,
+      "curicart_links": 6,
+      "bad_utm": 0,
+      "horizontal_overflow": false,
+      "h1": 1,
+      "elapsed_ms": 3032
+    }
+  ]
+}
