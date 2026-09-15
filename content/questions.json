@@ -710,15 +710,6 @@
         "utmUrl": "https://www.curicart.com/en/Productlistt_10.html?fuid=10&&category=Electronics&utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_electronics",
         "matchReason": "Check device-related examples where product type and package details may need closer comparison.",
         "status": "approved"
-      },
-      {
-        "type": "categoryLink",
-        "categoryName": "Oopbuy product research",
-        "displayTitle": "New product research",
-        "canonicalUrl": "https://www.curicart.com/en/agentslist_12.html?spreadsheet=Oopbuy",
-        "utmUrl": "https://www.curicart.com/en/agentslist_12.html?spreadsheet=Oopbuy&utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_oopbuy_product_research",
-        "matchReason": "Browse recent Oopbuy-related product research examples before comparing account or parcel details.",
-        "status": "approved"
       }
     ],
     "summary": "Learn why an Oopbuy shipping estimate can change and what details to compare before treating a shipping number as final.",
@@ -916,15 +907,6 @@
         "canonicalUrl": "https://www.curicart.com/en/Productlistt_10.html?fuid=10&&category=Electronics",
         "utmUrl": "https://www.curicart.com/en/Productlistt_10.html?fuid=10&&category=Electronics&utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_electronics",
         "matchReason": "Check device-related examples where product type and package details may need closer comparison.",
-        "status": "approved"
-      },
-      {
-        "type": "categoryLink",
-        "categoryName": "Oopbuy product research",
-        "displayTitle": "New product research",
-        "canonicalUrl": "https://www.curicart.com/en/agentslist_12.html?spreadsheet=Oopbuy",
-        "utmUrl": "https://www.curicart.com/en/agentslist_12.html?spreadsheet=Oopbuy&utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_oopbuy_product_research",
-        "matchReason": "Browse recent Oopbuy-related product research examples before comparing account or parcel details.",
         "status": "approved"
       }
     ],
@@ -2082,14 +2064,6 @@
       "oopbuy-spreadsheet-with-qc"
     ],
     "curicartBridge": [
-      {
-        "type": "categoryLink",
-        "categoryName": "Oopbuy product research",
-        "canonicalUrl": "https://www.curicart.com/en/agentslist_12.html?spreadsheet=Oopbuy",
-        "utmUrl": "https://www.curicart.com/en/agentslist_12.html?spreadsheet=Oopbuy&utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_oopbuy_product_research",
-        "matchReason": "Browse Oopbuy-related product research examples before checking warehouse photo status.",
-        "status": "approved"
-      }
     ]
   },
   {

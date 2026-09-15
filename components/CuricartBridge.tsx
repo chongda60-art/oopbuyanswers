@@ -17,7 +17,6 @@ const categoryItems = (items: CuricartBridgeItem[]) =>
 
 function getCategoryCta(item: Extract<CuricartBridgeItem, { type: "categoryLink" }>) {
   if (item.ctaLabel) return item.ctaLabel;
-  if (item.displayTitle?.toLowerCase().includes("new product")) return "Browse New Products";
   if (item.categoryName === "Shoe") return "Browse Shoes";
   if (item.categoryName === "Accessories") return "Browse Accessories";
   if (item.categoryName === "Electronics") return "Browse Electronics";
