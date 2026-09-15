@@ -22,6 +22,7 @@ No routes, sitemap, robots, canonical tags, schema, article body, site name, nav
 - verify.ps1 with config.example.psd1: passed (SITEMAP_URLS=22, VERIFY_OK)
 - Production: https://oopbuyanswers.com HTTP 200; www remains 308 to apex.
 - Production bridge check: six affected URLs returned 200, forbidden-label count 0, bad UTM count 0, horizontal overflow false, H1 count 1.
+- Full sitemap recheck: 22 URLs scanned, forbidden-label hits 0.
 - CuriCart destination checks: existing 35 unique destinations remained HTTP 200; no UTM-generation change was made.
 - Screenshots: six mobile 390px and six desktop captures are in this directory.
 
