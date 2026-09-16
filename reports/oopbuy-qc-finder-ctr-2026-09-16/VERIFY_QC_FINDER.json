@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-09-16T14:19:07.689Z",
+  "target": {
+    "path": "/questions/oopbuy-qc-finder",
+    "status": 200,
+    "canonical": "https://oopbuyanswers.com/questions/oopbuy-qc-finder",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  "mobile_390": {
+    "innerWidth": 390,
+    "scrollWidth": 390,
+    "bodyScrollWidth": 390,
+    "horizontal_overflow": false
+  },
+  "curicart_links": {
+    "count": 1,
+    "bad_utm": 0
+  },
+  "related": [
+    {
+      "path": "/questions/oopbuy-qc-photos",
+      "status": 200
+    },
+    {
+      "path": "/questions/oopbuy-spreadsheet-with-qc",
+      "status": 200
+    },
+    {
+      "path": "/questions/oopbuy-qc-photos-not-showing",
+      "status": 200
+    },
+    {
+      "path": "/questions/oopbuy-weidian-link",
+      "status": 200
+    },
+    {
+      "path": "/questions/oopbuy-shoe-size-chart",
+      "status": 200
+    }
+  ],
+  "title_present": false,
+  "meta_present": false
+}
