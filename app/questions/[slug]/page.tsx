@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CuricartBridge } from "@/components/CuricartBridge";
@@ -74,6 +75,20 @@ export default async function QuestionPage({ params }: { params: Promise<{ slug:
           <h2>Quick answer</h2>
           <p>{question.quickAnswer}</p>
         </div>
+        {question.slug === "oopbuy-qc-finder" ? (
+          <figure className="answer-visual" style={{ margin: "28px 0 0" }}>
+            <Image
+              src="/assets/qc-finder/qc-finder-workflow.webp"
+              alt="QC finder workflow showing product image, source details, and option checks"
+              width={1600}
+              height={900}
+              sizes="(max-width: 760px) 100vw, 850px"
+              style={{ width: "100%", height: "auto", border: "1px solid var(--rule)", borderRadius: "16px" }}
+              priority
+            />
+            <figcaption style={{ marginTop: "8px", color: "var(--muted)", fontSize: "14px" }}>Use the image, source record, option labels, and date as separate checks.</figcaption>
+          </figure>
+        ) : null}
       </header>
 
       {bodySections.length ? (
