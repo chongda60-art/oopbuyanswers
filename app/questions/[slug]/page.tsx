@@ -1,10 +1,32 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CuricartBridge } from "@/components/CuricartBridge";
 import { allQuestions, getPublicQuestion, isIndexableQuestion, publicQuestions } from "@/lib/content";
 import { siteConfig } from "@/lib/config";
+
+function renderInlineLinks(text: string): ReactNode {
+  const pattern = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g;
+  const parts: ReactNode[] = [];
+  let cursor = 0;
+  let match: RegExpExecArray | null;
+  let key = 0;
+
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > cursor) parts.push(text.slice(cursor, match.index));
+    parts.push(
+      <a href={match[2]} key={`inline-link-${key++}`} target="_blank" rel="noreferrer">
+        {match[1]}
+      </a>,
+    );
+    cursor = match.index + match[0].length;
+  }
+
+  if (cursor < text.length) parts.push(text.slice(cursor));
+  return parts.length ? parts : text;
+}
 
 export function generateStaticParams() {
   return publicQuestions.map((question) => ({ slug: question.slug }));
@@ -95,7 +117,7 @@ export default async function QuestionPage({ params }: { params: Promise<{ slug:
         bodySections.map((section) => (
           <section className={`answer-section${section.heading.toLowerCase().includes("check before relying") ? " unknown-box" : ""}`} key={section.heading}>
             <h2>{section.heading}</h2>
-            {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            {section.paragraphs?.map((paragraph) => <p key={paragraph}>{renderInlineLinks(paragraph)}</p>)}
             {section.ordered?.length ? <ol>{section.ordered.map((item) => <li key={item}>{item}</li>)}</ol> : null}
             {section.bullets?.length ? <ul>{section.bullets.map((item) => <li key={item}>{item}</li>)}</ul> : null}
           </section>
