@@ -1597,7 +1597,9 @@
     "relatedTopics": [
       "product-links"
     ],
-    "relatedQuestions": [],
+    "relatedQuestions": [
+      "oopbuy-weidian-link"
+    ],
     "curicartBridge": [
       {
         "type": "categoryLink",
