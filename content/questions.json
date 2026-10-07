@@ -2372,5 +2372,211 @@
         "status": "approved"
       }
     ]
+  },
+  {
+    "id": "q-kakobuy-product-link-not-working",
+    "slug": "kakobuy-product-link-not-working",
+    "targetKeyword": "kakobuy product link not working",
+    "title": "Kakobuy Product Link Not Working: What to Check",
+    "h1": "Kakobuy Product Link Not Working: What to Check",
+    "metaDescription": "What to check when a Kakobuy product link shows item not found or an unresolved product state. Compare the source URL, item ID, and visible page details.",
+    "status": "approved",
+    "indexable": true,
+    "primaryKeyword": "kakobuy product link not working",
+    "searchIntent": "Troubleshoot an unresolved Kakobuy source link without claiming a universal fix or platform policy.",
+    "topic": "product-links",
+    "priority": 1,
+    "updatedAt": "2026-10-07",
+    "quickAnswer": "Save the complete source URL, record the exact Kakobuy message, and check the original item page before changing anything. The public Kakobuy item flow can show an unresolved-product state, including item not found. Compare the source domain, item identifier, title, options, and visible details. Community posts describe similar failures but disagree about causes and workarounds, so use them as examples rather than platform rules.",
+    "evidenceSummary": "A current public Kakobuy item page shows an unresolved-item state, while recent community posts describe repeated link failures. The evidence supports a troubleshooting checklist, not a verified root cause or guaranteed repair.",
+    "bodySections": [
+      {
+        "heading": "Save the source URL first",
+        "paragraphs": [
+          "Copy the full URL into a note. Keep the domain, path, item identifier, and query string. If it came from a spreadsheet or post, save that source too.",
+          "A shortened link or screenshot is not enough to reproduce the check. Keep the original before trying another version."
+        ]
+      },
+      {
+        "heading": "Record what Kakobuy shows",
+        "paragraphs": [
+          "Write down the exact message, date, and time. The public Kakobuy item flow can show an unresolved-product state, including item not found. Note whether any title, image, option, or price appeared.",
+          "Do not turn the message into a cause. It does not prove that the seller removed the item, that Kakobuy blocked the domain, or that the URL is permanently dead."
+        ]
+      },
+      {
+        "heading": "Check the original item page",
+        "paragraphs": [
+          "Open the saved URL at its source domain. Record whether it loads, which item identifier it shows, and whether the visible title and options match the link you pasted.",
+          "If the source page fails too, record that separately. If it loads while Kakobuy does not resolve it, keep both facts without guessing which system is responsible.",
+          "A reachable source page is not proof that Kakobuy can process the item. It only shows what loaded during your check."
+        ]
+      },
+      {
+        "heading": "Compare the item identifier",
+        "paragraphs": [
+          "Look for missing characters, copied punctuation, changed domains, or a shop URL used where an item URL was expected. Compare the identifier in the saved URL with the source page.",
+          "Do not replace the link with a search result unless you can identify the same item."
+        ]
+      },
+      {
+        "heading": "Separate the failure states",
+        "paragraphs": [
+          "Keep these states distinct: the source page does not load; the source page loads but the identifier is incomplete; Kakobuy shows an unresolved-item message; or Kakobuy shows a record whose title, option, or image does not match the source.",
+          "Do not treat an empty record as proof of no stock. Do not treat a visible record as proof of quality, authenticity, seller reliability, or availability."
+        ],
+        "bullets": [
+          "Source page unavailable.",
+          "Source page available but item details do not match.",
+          "Kakobuy shows item not found or another unresolved state.",
+          "A visible record has different title, option, image, or identifier."
+        ]
+      },
+      {
+        "heading": "Use community reports as comparisons",
+        "paragraphs": [
+          "Recent r/kakobuy discussions describe Taobao and other source-link failures. Some users report that links returned later; others report that the same links stayed unresolved. The disagreement is useful because it shows why one workaround should not be published as a guaranteed fix.",
+          "Match a Reddit post by source domain, message, date, and item type. Otherwise keep it as background only."
+        ]
+      },
+      {
+        "heading": "Troubleshooting checklist",
+        "paragraphs": [
+          "Before asking for help, preserve the facts that another person can actually check."
+        ],
+        "ordered": [
+          "Save the complete original URL.",
+          "Record the source domain and item identifier.",
+          "Check whether the original page loads.",
+          "Copy the exact Kakobuy message.",
+          "Note any title, option, image, or price that appears.",
+          "Record the date and time.",
+          "Keep the spreadsheet or post that supplied the link."
+        ]
+      },
+      {
+        "heading": "Example: source page loads but Kakobuy does not resolve it",
+        "paragraphs": [
+          "Imagine that the original marketplace page opens and shows a title, an item identifier, and two visible options. Kakobuy then shows item not found. The defensible record is: the source page loaded at the check time, the identifier was visible, the options were visible, and Kakobuy did not display a matching item record.",
+          "That record does not tell you why the two pages differ. The source may have changed after the link was copied, the identifier may have been read incorrectly, or Kakobuy may have had a different result at that moment. Keep those as possibilities, not conclusions.",
+          "If you ask another person for help, send the source URL, the exact message, and the time of the check. A clear record is more useful than saying only that the link is broken."
+        ]
+      },
+      {
+        "heading": "Example: the title or option does not match",
+        "paragraphs": [
+          "A different problem appears when Kakobuy displays a record but the title, option, or image does not match the original page. Do not continue by assuming that similar wording means the same item. Compare the item identifier first, then compare the option label and the main visible image.",
+          "If the identifiers differ, treat the records as different until you can explain the difference. If the identifier matches but the title or option differs, save both views and mark the mismatch for review. Do not use a matching color name alone to override a different item record."
+        ]
+      },
+      {
+        "heading": "What to compare in a spreadsheet row",
+        "paragraphs": [
+          "A spreadsheet row can help you find the source, but it may preserve an older title or shortened URL. Compare the row with the current source page instead of copying the row as fact.",
+          "Check the complete source URL, source domain, item identifier, title, visible option text, image context, and the date the row was checked. If one field is missing, record it as missing. A row that points to a page is not proof of current stock, quality, authenticity, or platform handling."
+        ]
+      },
+      {
+        "heading": "When a link does resolve",
+        "paragraphs": [
+          "A resolved page is the start of comparison, not the end. Check that the item title and option labels match the source you intended to inspect. Save the page URL and the visible identifier so a later check can distinguish a changed listing from the original record.",
+          "Do not infer that a resolved link confirms seller quality, authenticity, long-term availability, or after-sales results. Those are separate questions that require separate evidence."
+        ]
+      },
+      {
+        "heading": "Keep observations separate from explanations",
+        "paragraphs": [
+          "A useful troubleshooting note has two columns in your own record. The first column contains what you saw: the source URL loaded, the source showed a particular identifier, and Kakobuy displayed item not found. The second column contains possible explanations that still need checking.",
+          "This separation prevents a guess from becoming a headline. It also makes later updates easier because you can replace an explanation without rewriting the original observation."
+        ]
+      },
+      {
+        "heading": "What this guide cannot confirm",
+        "paragraphs": [
+          "The public pages checked for this guide do not establish a universal supported-domain list, a fixed repair time, a successful workaround, stock status, seller reliability, authenticity, refunds, or after-sales results.",
+          "Current account screens can change, so check the live page before treating a field or path as final."
+        ]
+      }
+    ],
+    "steps": [
+      "Save the complete source URL and the source record that supplied it.",
+      "Compare source-page loading, item identifier, title, options, and visible details.",
+      "Record the exact Kakobuy unresolved message without guessing the cause.",
+      "Use community reports only to compare symptoms, not as platform rules."
+    ],
+    "mistakes": [
+      "Shortening or rewriting the source URL before saving it.",
+      "Treating a community workaround as a Kakobuy policy.",
+      "Inferring stock, authenticity, or seller quality from whether a link resolves."
+    ],
+    "unknowns": [
+      "The cause of an individual unresolved link.",
+      "Whether a specific source link is supported at the time of checking.",
+      "Any repair time, stock state, seller status, refund, or after-sales outcome."
+    ],
+    "faq": [
+      {
+        "question": "Why does Kakobuy show item not found?",
+        "answer": "It means no resolved item record was displayed during the check. The message alone does not prove whether the source was removed, the URL was malformed, or the page had a temporary problem."
+      },
+      {
+        "question": "Should I change the URL first?",
+        "answer": "No. Save the original, then compare the source page, identifier, and Kakobuy message."
+      },
+      {
+        "question": "Do Reddit fixes apply to every link?",
+        "answer": "No. Reddit reports describe individual cases and sometimes disagree. Use them to compare symptoms, not as proof of a universal fix."
+      },
+      {
+        "question": "Can a working link prove authenticity or stock?",
+        "answer": "No. A resolving page only shows that a record appeared at that time. It does not verify authenticity, availability, quality, or seller performance."
+      },
+      {
+        "question": "What should I save before asking for help?",
+        "answer": "Save the original URL, source domain, item identifier, exact Kakobuy message, date and time, and any visible title, option, image, or price."
+      }
+    ],
+    "sources": [
+      {
+        "type": "official",
+        "label": "Kakobuy item page",
+        "url": "https://www.kakobuy.com/item/notfound",
+        "checkedAt": "2026-10-07",
+        "proves": "A public unresolved-item state and the visible source-link entry context."
+      },
+      {
+        "type": "official",
+        "label": "Kakobuy unresolved item example",
+        "url": "https://www.kakobuy.com/item/details?affcode=bsz4q&url=https%3A%2F%2Fweidian.com%2Fitem.html%3FitemID%3D6156630954",
+        "checkedAt": "2026-10-07",
+        "proves": "An example of a source URL shown with an unresolved-product message."
+      },
+      {
+        "type": "community",
+        "label": "Recent Kakobuy link discussions",
+        "url": "https://www.reddit.com/r/kakobuy/comments/1uw6yoq/taobao_links_not_working/",
+        "checkedAt": "2026-10-07",
+        "proves": "Repeated user reports and disagreement about link-failure causes; not platform policy."
+      }
+    ],
+    "relatedTopics": [
+      "product-links",
+      "spreadsheet"
+    ],
+    "relatedQuestions": [
+      "oopbuy-weidian-link",
+      "oopbuy-spreadsheet-with-qc"
+    ],
+    "curicartBridge": [
+      {
+        "type": "categoryLink",
+        "categoryName": "Shoe",
+        "canonicalUrl": "https://www.curicart.com/en/Productlistt_1.html?fuid=1&&category=Shoe",
+        "utmUrl": "https://www.curicart.com/en/Productlistt_1.html?fuid=1&&category=Shoe&utm_source=oopbuyanswers&utm_medium=referral&utm_campaign=oopbuy_questions&utm_content=question_related_shoe",
+        "matchReason": "Compare source-page fields and visible product options on a separate product-research page.",
+        "status": "approved"
+      }
+    ],
+    "summary": "Check the original source URL, item identifier, and visible error before treating a Kakobuy product link as unavailable."
   }
 ]
