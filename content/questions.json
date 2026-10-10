@@ -1992,7 +1992,7 @@
     "searchIntent": "Help shoppers troubleshoot missing Oopbuy QC photos after a warehouse-related status appears.",
     "topic": "qc",
     "priority": 6,
-    "updatedAt": "2026-09-02",
+    "updatedAt": "2026-10-10",
     "quickAnswer": "If your Oopbuy QC photos are not showing after warehouse arrival, first confirm that the same item is marked as stocked or stored in the current Oopbuy record. A carrier delivery event is not always the same as completed warehouse intake. Check the item identifier, latest status time, photo area, and any issue notice. Keep screenshots of the current state, then use Oopbuy's current help or support channel if the record remains incomplete.",
     "evidenceSummary": "Check the item record, current status, update time, SKU, and photo area before assuming warehouse QC photos are missing.",
     "bodySections": [
@@ -2095,6 +2095,15 @@
         ]
       },
       {
+        "heading": "What the Current Public Pages Can Confirm",
+        "paragraphs": [
+          "The current public product page can show the source item and the wording used for warehouse-stage updates. Use the live page labels and the item record you are checking rather than assuming that every account view follows the same sequence.",
+          "Oopbuy's public inspection information describes stated receipt, checking, weighing, and storage steps. It does not set one universal time for every QC image to appear, a guaranteed image count, or a fixed result for a support request.",
+          "A visible source-page error can explain why a product link needs attention, but it does not by itself prove what happened to a separate warehouse photo record. Community reports help explain why this problem is common to ask about; they do not establish a current Oopbuy rule.",
+          "Keep fixed timing, extra-photo fees, support outcomes, and account-specific paths unconfirmed unless the current Oopbuy page you are using states them directly."
+        ]
+      },
+      {
         "heading": "Common Mistakes"
       },
       {
@@ -2178,7 +2187,29 @@
         "answer": "Include the item or order reference, exact status text, selected SKU, latest update time, and a screenshot of the photo area or warning. Do not post private account or payment information publicly."
       }
     ],
-    "sources": [],
+    "sources": [
+      {
+        "type": "official",
+        "label": "Oopbuy product page",
+        "url": "https://oopbuy.com/product/weidian/7594881694?inviteCode=U68CWQBN5",
+        "checkedAt": "2026-10-10",
+        "proves": "The live product page wording used to distinguish seller, warehouse-arrival, and stocked stages."
+      },
+      {
+        "type": "community",
+        "label": "Oopbuy community question",
+        "url": "https://www.reddit.com/r/oopbuy/comments/1h71wk3/why_are_my_qc_pics_not_being_sent/",
+        "checkedAt": "2026-10-10",
+        "proves": "A public user question about QC photos not arriving; it shows the pain point, not a platform-wide timing rule."
+      },
+      {
+        "type": "community",
+        "label": "Oopbuy community follow-up",
+        "url": "https://www.reddit.com/r/oopbuy/comments/1t2geqy/is_this_normal/",
+        "checkedAt": "2026-10-10",
+        "proves": "A public discussion about whether a QC-photo state is normal; it shows uncertainty, not a verified policy."
+      }
+    ],
     "relatedTopics": [
       "qc",
       "product-links"
